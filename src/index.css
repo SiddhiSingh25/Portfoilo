@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+    min-height: 100vh;
+    width: 100vw;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
+    background-color: #F8F9FA;
+}
+html.dark body{
+    background-color: #0A192F;
+}
+::selection {
+    background-color: rgb(48, 60, 85);
+    color: rgb(204, 214, 246);
+}
+
+.basic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.roboto {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/*a {
+    color: #64FFDA;
+}
+*/
+.common {
+    position: relative;
+}
+
+.common a {
+    position: relative; /* Make sure position is relative for the pseudo-element positioning */
+  }
+  
+  .common a::after {
+    content: '';
+    width: 0;
+    height: 1px;
+    background: #CC0088; /* Default color for light mode */
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  .common a:hover::after {
+    width: 100%; /* Expand width on hover */
+  }
+  
+  /* Dark mode background for ::after pseudo-element */
+  html.dark .common a::after {
+    background-color: #64FFDA; /* Dark mode color */
+  }
+  
+.common a:hover::after {
+    width: 100%;
+}
+
+/**/
+
+.btn{
+    transition: box-shadow 0.5 ease;
+}
+.btn:hover{
+    box-shadow: inset 1px 1px 10px 1px #CC0088;
+}
+html.dark .btn:hover{
+    box-shadow: inset 1px 1px 10px 1px #64FFDA;
+}
+.image-container {
+    background-color: #f2a9d9;
+    background-blend-mode: color;
+    position: relative;   
+    border-radius: 4px;
+    overflow: hidden; 
+    transition: transform 0.3s ease; 
+}
+html.dark .image-container{
+    background-color: #96ffe6fa;
+}
+.image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+    mix-blend-mode: multiply; /* Applies blending mode */
+    transition: mix-blend-mode 0.3s ease;
+    transition: box-shadow 0.3s ease; /* Smooth transition for blend mode change */
+}
+
+.image-container:hover .image {
+    mix-blend-mode: normal; /* Changes blend mode on hover */
+}
+
+.image-container:hover {
+    transform: translate(8px, 8px); 
+    background-color: transparent;
+    box-shadow: 0px 0px 20px 2px #CC0088;
+}
+html.dark .image-container:hover{
+    box-shadow: 0px 0px 20px 2px #64FFDA;
+}
+
+
+
+/**/
+.leftEducation {
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+}
+
+.leftEducation::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}

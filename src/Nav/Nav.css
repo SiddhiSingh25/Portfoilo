@@ -1,0 +1,24 @@
+.link{
+    position: relative;
+}
+.link::after{
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #CC0088;
+    transition: all ease 0.4s;
+}
+.link:hover::after{
+    width: 100%;
+}
+html.dark .link::after{
+    background-color: #64FFDA;
+}
+.navBorder{
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+}

@@ -1,8 +1,8 @@
 .banner{
-    background-image: url('Siddhi Singh (1).png');
+    background-image: url('/src/assets/Bn2.png');
 }
 html.dark .banner{
-    background-image: url("Banner copy.png");
+    background-image: url('/src/assets/bn1.png');
 }
 .profileNavBtm{
     border-bottom: .01rem solid #CC0088 ;

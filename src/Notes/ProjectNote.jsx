@@ -49,26 +49,44 @@ function ProjectNote({ showPr, projectCount }) {
     let alpha = showPr ? projectDetails : projectDetails.slice(0, projectCount);
     console.log(alpha)
     return (
-        <>
-            {alpha.map((elm) => (
-                <div className="md:h-[40vh] h-[35vh] md:w-[31vw] w-[100%] rounded py-8 px-5 flex items-start justify-start flex-col bg-lightModeBox dark:bg-[#172A45]">
-                    <div className="flex items-center justify-between w-[100%] mb-5">
-                        <div><FiFolder className="size-8 dark:text-darkModeHeading text-lightModeBg font-light" /></div>
-                        <div className="flex items-center justify-center gap-2">
-                            <a href={elm.github}><VscGithubAlt /></a>
-                            <a href={elm.viewProject}> <FaArrowUpRightFromSquare /></a>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+            {alpha.map((elm, index) => (
+                <div 
+                    key={elm.projectName + index}
+                    className="w-full rounded-lg p-6 flex flex-col justify-between bg-lightModeBox dark:bg-[#172A45] border border-gray-200 dark:border-gray-800 shadow-sm hover:-translate-y-1 transition-transform duration-300"
+                >
+                    <div>
+                        <div className="flex items-center justify-between w-full mb-4">
+                            <FiFolder className="size-7 dark:text-darkModeHeading text-lightModeHeading" />
+                            <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                                <a href={elm.github} target="_blank" rel="noopener noreferrer" className="hover:text-lightModeHeading dark:hover:text-darkModeHeading transition-colors p-1">
+                                    <VscGithubAlt className="size-5" />
+                                </a>
+                                <a href={elm.viewProject} target="_blank" rel="noopener noreferrer" className="hover:text-lightModeHeading dark:hover:text-darkModeHeading transition-colors p-1">
+                                    <FaArrowUpRightFromSquare className="size-4" />
+                                </a>
+                            </div>
                         </div>
+                        <h3 className="text-xl roboto-bold text-lightModeText dark:text-darkmodeSpan mb-2 hover:text-lightModeHeading dark:hover:text-darkModeHeading transition-colors">
+                            <a href={elm.viewProject} target="_blank" rel="noopener noreferrer">
+                                {elm.projectName}
+                            </a>
+                        </h3>
+                        <p className="basic text-sm dark:text-[#828dae] text-gray-600 mb-4 leading-relaxed">
+                            {elm.projectDesc}
+                        </p>
                     </div>
-                    <h1 className="text-[3vh] text-lightModeText dark:text-darkmodeSpan roboto-bold mb-3">{elm.projectName}</h1>
-                    <p className="basic md:text-[14px] text-[18px] dark:text-[#828dae] text-red-50 mb-2">{elm.projectDesc}</p>
-                    <div className="flex roboto gap-4  text-red-50 dark:text-[#828dae]  basicmt-10">
-                        {elm.techStack.map((item, idx) =>
-                            <span key={idx} className="text-[13px]">{item}</span>
-                        )}
+
+                    <div className="flex flex-wrap gap-2 pt-2 border-t border-gray-200/50 dark:border-gray-700/50">
+                        {elm.techStack.map((item, idx) => (
+                            <span key={idx} className="text-xs font-mono dark:text-[#828dae] text-gray-500">
+                                {item}
+                            </span>
+                        ))}
                     </div>
                 </div>
             ))}
-        </>
-    )
+        </div>
+    );
 }
 export default ProjectNote

@@ -85,51 +85,74 @@ function ProjectBox({ showAll, count }) {
       {projectsToShow.map((elm, idx) => (
         <div
           key={elm.projectName + idx}
-          className="md:h-[83vh] h-[53vh] w-[100%] flex"
-          style={{ flexDirection: elm.containerClass }}
+          className="w-full flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 my-6 md:my-12 relative"
+          style={{ flexDirection: window.innerWidth > 768 ? elm.containerClass : 'column' }}
         >
-          <div className="project-image md:w-[55%] w-[100%] h-[90%] md:h-[100%]">
-            <a href={elm.viewLink}>
+          {/* Image Container */}
+          <div className="w-full md:w-[55%] h-[240px] sm:h-[320px] md:h-[380px] rounded-lg overflow-hidden shadow-lg border border-gray-200 dark:border-gray-800">
+            <a href={elm.viewLink} target="_blank" rel="noopener noreferrer" className="block h-full w-full">
               <img
                 src={elm.img}
                 alt={elm.projectName}
-                className="rounded md:h-[100%] md:w-[100%] h-[100%] object-cover object-center img"
+                className="h-full w-full object-cover object-top hover:scale-105 transition-transform duration-300"
               />
             </a>
           </div>
+
+          {/* Project Details */}
           <div
-            className={`md:w-[45%] w-[90%] h-[50%] absolute md:relative lg:relative 
-              md:h-[100%] flex md:right-0 right-10 justify-center flex-col gap-4 ${elm.dataClass}`}
-            style={{ alignItems: alignItems[idx] }}
+            className={`w-full md:w-[50%] flex flex-col gap-3 md:gap-4 ${
+              elm.containerClass === 'row' ? 'md:items-end md:text-right' : 'md:items-start md:text-left'
+            } items-start text-left`}
           >
-            <h1 className="dark:text-darkModeHeading text-lightModeHeading text-[13px]">Featured Project</h1>
-            <h1 className="text-4xl  dark:text-darkModeText text-lightModeText roboto-bold">
-              {elm.projectName}
-            </h1>
-            <div
-              className="md:w-[112%] w-[85%] rounded h-[16vh]  bg-transparent dark:bg-transparent md:bg-lightModeBox dark:md:bg-[#172A45] flex items-center justify-center md:items-center md:justify-end px-5"
-              style={{ zIndex: elm.zIdx }}
-            >
-              <p
-                className="text-[15px] dark:text-[#98a2c2] text-red-50 basic"
-                style={{ textAlign: elm.textAlign }}
-              >
+            <span className="dark:text-darkModeHeading text-lightModeHeading text-xs sm:text-sm font-semibold tracking-wider uppercase">
+              Featured Project
+            </span>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl dark:text-darkModeText text-lightModeText roboto-bold leading-tight">
+              <a href={elm.viewLink} target="_blank" rel="noopener noreferrer" className="hover:text-lightModeHeading dark:hover:text-darkModeHeading transition-colors">
+                {elm.projectName}
+              </a>
+            </h3>
+            
+            {/* Description Card */}
+            <div className="w-full rounded-md bg-lightModeBox dark:bg-[#172A45] p-4 sm:p-5 shadow-md border border-gray-200 dark:border-gray-800/50">
+              <p className="text-sm sm:text-base dark:text-[#98a2c2] text-gray-700 basic leading-relaxed">
                 {elm.projectDesc}
               </p>
             </div>
-            <div className="flex gap-8 flex-wrap w-[90%] md:w-[100%] md:items-start md:justify-end items-center justify-center" style={{justifyContent : elm.justify}}>
-              {elm.techStack.map((item, idx) => (
-                <span key={item + idx} className="text-[13px] dark:text-[#98a2c2] text-lightBlack">
+
+            {/* Tech Stack */}
+            <div className={`flex flex-wrap gap-2 sm:gap-3 w-full ${
+              elm.containerClass === 'row' ? 'md:justify-end' : 'md:justify-start'
+            } justify-start`}>
+              {elm.techStack.map((item, i) => (
+                <span key={item + i} className="text-xs sm:text-sm px-2.5 py-1 rounded bg-gray-200 dark:bg-[#112240] dark:text-[#64FFDA] text-lightModeHeading font-mono">
                   {item}
                 </span>
               ))}
             </div>
-            <div className="flex gap-3">
-              <a href={elm.gitHub}>
-                <FiGithub className="text-[#E6F1FF] size-5" />
+
+            {/* Links */}
+            <div className={`flex items-center gap-4 mt-1 ${
+              elm.containerClass === 'row' ? 'md:justify-end' : 'md:justify-start'
+            } justify-start`}>
+              <a 
+                href={elm.gitHub} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-700 dark:text-gray-300 hover:text-lightModeHeading dark:hover:text-[#64FFDA] transition-colors p-1"
+                aria-label="GitHub Repository"
+              >
+                <FiGithub className="size-5 sm:size-6" />
               </a>
-              <a href={elm.viewLink}>
-                <FaArrowUpRightFromSquare className="text-[#E6F1FF] size-5" />
+              <a 
+                href={elm.viewLink} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-700 dark:text-gray-300 hover:text-lightModeHeading dark:hover:text-[#64FFDA] transition-colors p-1"
+                aria-label="Live Demo"
+              >
+                <FaArrowUpRightFromSquare className="size-5 sm:size-6" />
               </a>
             </div>
           </div>

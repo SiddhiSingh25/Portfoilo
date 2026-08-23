@@ -25,12 +25,12 @@ function Project() {
     };
     return (
         <>
-            <div className="md:min-h-[100vh] min-h-[80vh] w-[100vw] md:py-10 md:px-16 py-4 px-5 lg:px-6 lg:py-6 " id="projects">
-                <div className="h-[100%] w-[100%] flex items-start justify-center flex-col md:py-10 md:px-16 py-4 px-5 lg:px-6 lg:py-6  gap-10">
-                    <div className="md:w-[48%] w-[100%]">
-                        <Heading count="03." title="Featured Project" />
+            <div className="min-h-screen w-full py-12 md:py-20 px-4 sm:px-8 md:px-16 flex items-center justify-center" id="projects">
+                <div className="w-full max-w-7xl flex items-start justify-center flex-col gap-10">
+                    <div className="w-full md:w-[48%]">
+                        <Heading count="03." title="Featured Projects" />
                     </div>
-                    <div className="h-[100%] w-[100%] flex items-center justify-center gap-12 md:gap-28 flex-col">
+                    <div className="w-full flex items-center justify-center gap-12 md:gap-24 flex-col">
                         <ProjectBox showAll={showAll} count={count} />
                         <Button btnData={count >= totalProjects ? "Show Less" : "View More"} handleBtn={handleBtn} />
                     </div>

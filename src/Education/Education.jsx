@@ -57,65 +57,58 @@ function Education() {
     return (
         <>
             <div
-                className="md:min-h-[90vh] min-h-[70vh] w-[100vw] md:py-20 md:px-28 py-4 px-5 flex items-center justify-center flex-col"
+                className="min-h-screen w-full py-12 md:py-20 px-4 sm:px-8 md:px-16 flex items-center justify-center flex-col"
                 id="education"
             >
-                <div className="w-[100%] flex items-center justify-center">
-                    <div className="md:w-[62%] w-[100%] flex items-start justify-center mb-7 md:mb-9">
-                        <Heading count="05." title="Experience & Education" />
-                    </div>
+                <div className="w-full max-w-5xl flex items-start justify-start mb-8 md:mb-12">
+                    <Heading count="05." title="Experience & Education" />
                 </div>
 
-                <div className="md:h-[80vh] h-[100%] md:w-[62%] w-[100%] flex items-start justify-between flex-col">
-                    <div className="leftEducation md:h-[25vh] h-auto w-[100%] flex flex-row md:flex-col items-start justify-start overflow-x-auto">
+                <div className="w-full max-w-5xl flex items-start justify-between flex-col md:flex-row gap-8 md:gap-12">
+                    {/* Left Tab Buttons */}
+                    <div className="leftEducation w-full md:w-[35%] flex flex-row md:flex-col items-start justify-start overflow-x-auto border-b md:border-b-0 md:border-l border-gray-300 dark:border-gray-700">
                         {Object.keys(colleges).map((key, index) => (
                             <div
                                 key={index}
-                                className={`flex-shrink-0 w-[80vw] md:w-[19vw] cursor-pointer px-3 py-2 transition-all ease-in-out duration-200 ${selectedCollege === key
-                                        ? "border-b-4 md:border-l-4 bg-gray-200 dark:bg-darkModeBox dark:border-darkModeHeading border-lightModeHeading"
-                                        : "border-b-2 md:border-l-2 border-lightBlack dark:border-[#8892B0]"
-                                    } hover:bg-gray-200 dark:hover:bg-gray-700`}
+                                className={`flex-shrink-0 w-auto min-w-[180px] md:min-w-full cursor-pointer px-4 py-3 text-sm font-semibold transition-all ease-in-out duration-200 ${
+                                    selectedCollege === key
+                                        ? "border-b-2 md:border-b-0 md:border-l-4 bg-gray-200 dark:bg-darkModeBox dark:border-darkModeHeading border-lightModeHeading text-lightModeHeading dark:text-darkModeHeading"
+                                        : "border-b-2 md:border-b-0 md:border-l-2 border-transparent text-gray-600 dark:text-[#8892B0]"
+                                } hover:bg-gray-200 dark:hover:bg-gray-800`}
                                 onClick={() => handleEduDetails(key)}
                             >
-                                <h1
-                                    className={`roboto transition-all ${selectedCollege === key
-                                            ? "text-lightModeHeading dark:text-darkModeHeading"
-                                            : "text-lightBlack dark:text-[#8892B0]"
-                                        }`}
-                                >
-                                    {colleges[key].name}
-                                </h1>
+                                <h4 className="roboto truncate">{colleges[key].name}</h4>
                             </div>
                         ))}
                     </div>
 
-                    <div className="right h-[100%] w-[100%] md:w-[47%] py-9 px-2">
-                        <h1 className="text-[3.6vh] md:text-[3.7vh] dark:text-[#E6F1FF] text-lightBlack roboto-bold mb-[0.2vh] leading-tight">
+                    {/* Right Details Panel */}
+                    <div className="right w-full md:w-[60%] flex flex-col gap-3 py-2 px-2">
+                        <h3 className="text-xl sm:text-2xl md:text-3xl dark:text-[#E6F1FF] text-lightBlack roboto-bold leading-tight">
                             {college.course}
-                            <span className="dark:text-darkModeHeading text-lightModeHeading text-[3.2vh]"> @</span>
-                        </h1>
-                        <h1 className="dark:text-darkModeHeading text-lightModeHeading md:-text-[3.5vh] text-[3.4vh] roboto-bold leading-tight md:leading-7">
-                            {college.name}
-                        </h1>
-                        <p className="text-[14px] dark:text-[#8892B0] text-lightModeText mt-4 mb-1">{college.year}</p>
-                        <p className="text-[14px] dark:text-[#8892B0] text-lightModeText mb-4">{college.location}</p>
-                        <div className="flex items-start justify-start gap-2 flex-col">
-                            <h1 className="flex items-center justify-start gap-x-2 gap-y-0">
-                                <IoTriangle className="text-[1vh] rotate-90 dark:text-darkModeHeading text-lightModeHeading" />
-                                <p className="text-[15px] Roboto dark:text-[#8892B0] text-lightModeText">{college.branch}</p>
-                            </h1>
-                            <h1 className="flex items-center justify-start gap-x-2 gap-y-0">
-                                <IoTriangle className="text-[1vh] rotate-90 dark:text-darkModeHeading text-lightModeHeading" />
-                                <p className="text-[15px] Roboto dark:text-[#8892B0] text-lightModeText">{college.marks}</p>
-                            </h1>
-                            <h1 className="flex items-center justify-start gap-x-2 gap-y-0">
-                                <IoTriangle className="text-[1vh] rotate-90 dark:text-darkModeHeading text-lightModeHeading" />
-                                <p className="text-[15px] Roboto dark:text-[#8892B0] text-lightModeText">{college.board}</p>
-                            </h1>
-                            <h1 className="flex items-center justify-start gap-x-2 gap-y-0">
-                                <IoTriangle className="text-[1vh] rotate-90 dark:text-darkModeHeading text-lightModeHeading" />
-                                <p className="text-[15px] Roboto dark:text-[#8892B0] text-lightModeText">{college.medium}</p>
-                            </h1>
+                            <span className="dark:text-darkModeHeading text-lightModeHeading"> @ {college.name}</span>
+                        </h3>
+                        <div className="flex flex-wrap gap-x-4 text-xs sm:text-sm dark:text-[#8892B0] text-gray-600 mt-1 mb-3">
+                            <span>📅 {college.year}</span>
+                            <span>📍 {college.location}</span>
+                        </div>
+                        <div className="flex items-start justify-start gap-3 flex-col text-sm sm:text-base">
+                            <div className="flex items-center gap-2">
+                                <IoTriangle className="text-xs rotate-90 dark:text-darkModeHeading text-lightModeHeading flex-shrink-0" />
+                                <p className="Roboto dark:text-[#8892B0] text-gray-700">{college.branch}</p>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <IoTriangle className="text-xs rotate-90 dark:text-darkModeHeading text-lightModeHeading flex-shrink-0" />
+                                <p className="Roboto dark:text-[#8892B0] text-gray-700">{college.marks}</p>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <IoTriangle className="text-xs rotate-90 dark:text-darkModeHeading text-lightModeHeading flex-shrink-0" />
+                                <p className="Roboto dark:text-[#8892B0] text-gray-700">{college.board}</p>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <IoTriangle className="text-xs rotate-90 dark:text-darkModeHeading text-lightModeHeading flex-shrink-0" />
+                                <p className="Roboto dark:text-[#8892B0] text-gray-700">{college.medium}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

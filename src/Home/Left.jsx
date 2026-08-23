@@ -7,21 +7,21 @@ function Left() {
     animate()
     return (
         <>
-            <div className="left h-[100%] w-[100%] flex items-start justify-between flex-col md:py-36 py-2  md:px-7 px-0"  >
-                <div className="h-[40%] w-[100%] mb-7 md:mb-0">
-                    <h1 className="dark:text-darkModeHeading text-lightModeHeading mb-2 md:gap-0 heading1">Namaste, World! I am</h1>
-                    <h1 className="md:text-7xl text-6xl  dark:text-darkmodeSpan text-lightModeText  roboto-bold heading2">Siddhi Singh</h1>
-                    <h1 className="md:text-[8vh] text-5xl dark:text-darkModeText text-lightmodeSpan roboto-bold leading-none heading3 mt-2">I build mobile apps & web experiences.</h1>
+            <div className="left w-full flex items-start justify-between flex-col py-6 md:py-12 md:px-4"  >
+                <div className="w-full mb-6">
+                    <h1 className="dark:text-darkModeHeading text-lightModeHeading text-sm sm:text-base font-semibold mb-2 heading1">Namaste, World! I am</h1>
+                    <h1 className="text-4xl sm:text-6xl md:text-7xl dark:text-darkmodeSpan text-lightModeText roboto-bold heading2 tracking-tight">Siddhi Singh</h1>
+                    <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl dark:text-darkModeText text-lightmodeSpan roboto-bold leading-tight heading3 mt-3">I build mobile apps & web experiences.</h1>
                 </div>
-                <div className="h-[50%] w-[100%] flex items-start justify-center flex-col gap-2 md:gap-0 mb-7 md:mb-4">
-                    <h1 className="dark:text-darkModeText text-lightModeText roboto md:text-[2.4vh] text-[2.1vh] leading-9 lines">
+                <div className="w-full flex items-start justify-center flex-col gap-3 mb-8">
+                    <h1 className="dark:text-darkModeText text-lightModeText roboto text-base sm:text-lg leading-relaxed lines">
                         I'm a <LinkText text="React Native & Web Developer" link="https://github.com/SiddhiSingh25" /> currently working at <LinkText text="Macreel Infosoft" link="https://macreel.co.in/" /> in Noida.
                     </h1>
-                    <h1 className="dark:text-darkModeText text-lightModeText roboto md:text-[2.4vh] text-[2.1vh] leading-9 lines">
+                    <h1 className="dark:text-darkModeText text-lightModeText roboto text-base sm:text-lg leading-relaxed lines">
                         Pursuing <LinkText text="B.Tech in CSE (Data Science)" link="#education" /> & crafting high-performance digital products for clients.
                     </h1>
-                    <h1 className="dark:text-darkModeText text-lightModeText roboto md:text-[2.4vh] text-[2.1vh] leading-9 lines">
-                        Full time working proffesional & part time Freelancer.
+                    <h1 className="dark:text-darkModeText text-lightModeText roboto text-base sm:text-lg leading-relaxed lines">
+                        Full-time working professional & freelance developer.
                     </h1>
                 </div>
                 <a href="#contact">

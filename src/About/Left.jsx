@@ -44,27 +44,27 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Left() {
   return (
-    <div className="left h-[100%] flex items-start justify-start md:w-[45%] w-[100%] flex-col my-3 px-8">
-      <Heading count="01." title="About me" className="title  mb-8" />
-      <div className="mt-16">
-        <p className="text-lightModeText  dark:text-[#D1D5DB] mb-5 roboto text-[2.4vh] heading1">
+    <div className="left flex items-start justify-start md:w-[50%] w-full flex-col my-3 px-2 sm:px-4 md:px-0">
+      <Heading count="01." title="About me" className="title mb-8" />
+      <div className="mt-8 md:mt-12">
+        <p className="text-lightModeText dark:text-[#D1D5DB] mb-5 roboto text-base sm:text-lg leading-relaxed heading1">
           Hello! I'm <LinkText text="Siddhi Singh." link="https://github.com/SiddhiSingh25" />
           A passionate React Native & Web Developer based in Noida, UP.
         </p>
-        <p className="text-lightModeText  dark:text-[#D1D5DB] mb-5 roboto text-[2.4vh] heading2">
+        <p className="text-lightModeText dark:text-[#D1D5DB] mb-5 roboto text-base sm:text-lg leading-relaxed heading2">
           Currently working as a full-time <LinkText text="React Native Developer" link="https://macreel.co.in/" /> at Macreel Infosoft Pvt. Ltd., while pursuing my <LinkText text="B.Tech in CSE (Data Science)" />.
         </p>
-        <p className="text-lightModeText  dark:text-[#D1D5DB] mb-5 roboto text-[2.4vh]">
+        <p className="text-lightModeText dark:text-[#D1D5DB] mb-6 roboto text-base sm:text-lg leading-relaxed">
           I build cross-platform mobile apps, modern web applications, and help freelance clients turn ideas into clean, functional code.
         </p>
       </div>
-      <div className="flex items-center justify-start flex-col">
-        <p className="text-[#454a59] dark:text-[#D1D5DB] mb-5">Technologies & tools I specialize in:</p>
-        <div className="md:h-[20vh] h-[14vh] px-5 flex items-start justify-center flex-col flex-wrap w-[100%] gap-2 mb-10 md:mb-0">
+      <div className="flex items-start justify-start flex-col w-full mt-2">
+        <p className="text-[#454a59] dark:text-[#D1D5DB] mb-4 font-semibold text-sm sm:text-base">Technologies & tools I specialize in:</p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full">
           {["React Native", "React.js", "JavaScript (ES6+)", "Tailwind CSS", "HTML5 & CSS3", "Java (Core)", "GSAP", "REST APIs", "Git & GitHub"].map((item) => (
-            <div key={item} className="flex items-center justify-start gap-x-2 gap-y-2 skills-item">
-              <IoTriangle className="text-[1vh] rotate-90 text-lightModeHeading dark:text-darkModeHeading" />
-              <p className="text-[14px] Roboto text-lightModeText  dark:text-[#D1D5DB]">{item}</p>
+            <div key={item} className="flex items-center justify-start gap-2 skills-item">
+              <IoTriangle className="text-xs rotate-90 text-lightModeHeading dark:text-darkModeHeading flex-shrink-0" />
+              <p className="text-xs sm:text-sm Roboto text-lightModeText dark:text-[#D1D5DB] truncate">{item}</p>
             </div>
           ))}
         </div>

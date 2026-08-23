@@ -28,7 +28,7 @@ function ProfileNav() {
 
     return (
         <nav
-            className={`fixed top-0 h-[10.8vh] w-[100vw] flex items-center justify-center bg-lightModeBg dark:bg-darkModeBg transition-transform duration-300 z-50 ${showNav ? "translate-y-0" : "-translate-y-full"}`}
+            className={`fixed top-0 h-[10.8vh] w-full flex items-center justify-center bg-lightModeBg dark:bg-darkModeBg transition-transform duration-300 z-50 ${showNav ? "translate-y-0" : "-translate-y-full"}`}
         >
             <div className='h-[100%] w-[88%] border-[0.01rem] flex items-center justify-between border-t-transparent border-l-transparent border-r-transparent dark:border-t-transparent dark:border-l-transparent dark:border-r-transparent border-solid border-lightModeHeading dark:border-darkModeHeading'>
                 <div className="logo">

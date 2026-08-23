@@ -13,27 +13,24 @@ function Contact() {
     return (
         <>
             <div
-                className="md:min-h-[100vh] min-h-[70vh] w-[100vw] py-5 px-6 md:py-10 md:px-28 flex items-center justify-center flex-col"
+                className="min-h-screen w-full py-12 md:py-20 px-4 sm:px-8 md:px-16 flex items-center justify-center flex-col"
                 id="contact"
             >
-                <h1
-                    className="text-4xl text-center roboto-bold text-lightModeHeading dark:text-darkModeHeading w-[100%] md:w-[40%] mb-4"
-                    style={{ textShadow: "1px 1px 5px #aaa" }}
-                >
-                    <Heading count="06. " title="Get in touch" />
-                </h1>
+                <div className="w-full max-w-2xl flex items-center justify-center mb-6">
+                    <Heading count="06." title="Get In Touch" />
+                </div>
 
-                <div className="h-auto w-[100%] md:w-[50%] border-2 border-lightModeHeading dark:border-darkModeHeading border-solid px-6 md:px-16 py-10 flex items-center justify-start flex-wrap gap-6 md:gap-10 flex-col">
-                    <div className="w-[100%] flex items-start justify-start flex-wrap gap-6 md:gap-8 text-center">
-                        <p className="md:text-[16px] text-[15px] roboto text-lightModeText dark:text-darkModeText w-full">
-                            Whether you need a mobile app with <strong>React Native</strong>, a modern web app, or have a freelance project in mind, my inbox is always open!
+                <div className="w-full max-w-2xl rounded-lg border-2 border-lightModeHeading dark:border-darkModeHeading p-6 sm:p-10 flex items-center justify-center flex-col gap-6 shadow-md bg-lightModeBox/50 dark:bg-[#172A45]/50">
+                    <div className="w-full flex flex-col gap-4 text-center">
+                        <p className="text-base sm:text-lg roboto text-lightModeText dark:text-darkModeText leading-relaxed">
+                            Whether you need a cross-platform mobile app with <strong>React Native</strong>, a modern web app, or have a freelance project in mind, my inbox is always open!
                         </p>
-                        <p className="md:text-[16px] text-[15px] roboto text-lightModeText dark:text-darkModeText w-full">
-                            📧 <strong>Email:</strong> <LinkText text="singhsiddhi960@gmail.com" link="mailto:singhsiddhi960@gmail.com" /><br/>
-                            📱 <strong>Phone:</strong> +91 8303638706<br/>
-                            📍 <strong>Location:</strong> Noida (Sector 63), Uttar Pradesh
-                        </p>
-                        <p className="md:text-[16px] text-[15px] roboto text-lightModeText dark:text-darkModeText w-full">
+                        <div className="text-sm sm:text-base roboto text-lightModeText dark:text-darkModeText flex flex-col gap-1 leading-relaxed">
+                            <p>📧 <strong>Email:</strong> <LinkText text="singhsiddhi960@gmail.com" link="mailto:singhsiddhi960@gmail.com" /></p>
+                            <p>📱 <strong>Phone:</strong> +91 8303638706</p>
+                            <p>📍 <strong>Location:</strong> Noida (Sector 63), Uttar Pradesh</p>
+                        </div>
+                        <p className="text-sm sm:text-base roboto text-lightModeText dark:text-darkModeText">
                             Connect on <LinkText text="LinkedIn" link="https://www.linkedin.com/in/siddhi-singh07/" />, 
                             <LinkText text="GitHub" link="https://github.com/SiddhiSingh25" />, or 
                             <LinkText text="Twitter" link="https://twitter.com/SiddhiSingh07" />.
@@ -41,7 +38,7 @@ function Contact() {
                     </div>
 
                     <button
-                        className="px-6 py-3 border-[.01rem] border-solid border-lightModeHeading dark:border-darkModeHeading rounded-[3px] flex items-center justify-center text-lightModeHeading dark:text-darkModeHeading hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 ease-in-out text-lg font-semibold"
+                        className="mt-2 px-8 py-3.5 border-2 border-solid border-lightModeHeading dark:border-darkModeHeading rounded-md flex items-center justify-center text-lightModeHeading dark:text-darkModeHeading hover:bg-lightModeHeading hover:text-white dark:hover:bg-[#64FFDA] dark:hover:text-[#0A192F] transition-all duration-300 ease-in-out text-base sm:text-lg font-semibold shadow-sm"
                         onClick={handleBtn}
                     >
                         {btnData}

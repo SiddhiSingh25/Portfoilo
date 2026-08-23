@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import ProfileImg from '../assets/newImg.jpg';
+import ProfileImg from '../assets/profile-avatar.jpg';
 import { NavLink } from 'react-router-dom';
 import ThemeChanger from '../ThemeChanger';
 import './Nav.css';

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import ProfileImg from "../assets/newImg.jpg";
+import ProfileImg from "../assets/profile-avatar.jpg";
 import ThemeChanger from "../ThemeChanger";
 
 function ProfileNav() {

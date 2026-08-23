@@ -4,40 +4,50 @@ import { IoTriangle } from "react-icons/io5";
 
 function Education() {
     let colleges = {
+        exp1: {
+            course: "React Native Developer (Full-time)",
+            name: "Macreel Infosoft Pvt. Ltd.",
+            year: "Feb 2026 - Present",
+            location: "Sector 63, Noida, UP",
+            branch: "Department : Information Technology (IT)",
+            marks: "Role : Mobile App & Web Development",
+            board: "Mode : On-site (6 Days/Week)",
+            medium: "Tech Stack : React Native, React.js, JavaScript, REST APIs",
+        },
         college1: {
-            course: "Diploma",
+            course: "B.Tech - CSE (Data Science)",
+            name: "Bachelor of Technology",
+            year: "2024 - Present (5th Semester)",
+            location: "Noida, Uttar Pradesh",
+            branch: "Branch : Computer Science & Data Science",
+            marks: "Status : Currently Pursuing (5th Sem)",
+            board: "Roll No : 2504731549015",
+            medium: "Medium : English",
+        },
+        college2: {
+            course: "Diploma in Information Technology",
             name: "Government Girls Polytechnic Ballia",
             year: "2022 - 2025",
-            location: "Ballia",
+            location: "Ballia, UP",
             branch: "Branch : Information Technology",
             marks: "Aggregate : 82.6%",
             board: "Board : BTEUP",
-            medium: "English",
-        },
-        college2: {
-            course: "Senior Secondary Education",
-            name: "Shri Krishn Inter College",
-            year: "2020 - 2022",
-            location: "Ballia",
-            branch: "Percentage - 74.0%",
-            marks: "Stream - Mathematics & Science",
-            board: "Board - UP Board",
-            medium: "Hindi",
+            medium: "Medium : English",
         },
         college3: {
-            course: "Secondary Education",
-            name: "Meera Devi Balika Inter College",
-            year: "2020",
-            location: "Ballia",
-            branch: "Percentage - 80.0%",
-            marks: "Stream - Science",
-            board: "Board - UP Board",
-            medium: "Hindi",
+            course: "Senior Secondary Education (12th)",
+            name: "Shri Krishn Inter College",
+            year: "2020 - 2022",
+            location: "Ballia, UP",
+            branch: "Percentage : 74.0%",
+            marks: "Stream : Mathematics & Science",
+            board: "Board : UP Board",
+            medium: "Medium : Hindi",
         },
     };
 
-    let [college, setCollege] = useState(colleges.college1);
-    let [selectedCollege, setSelectedCollege] = useState("college1");
+    let [college, setCollege] = useState(colleges.exp1);
+    let [selectedCollege, setSelectedCollege] = useState("exp1");
 
     let handleEduDetails = (collegeCount) => {
         setCollege(colleges[collegeCount]);
@@ -52,7 +62,7 @@ function Education() {
             >
                 <div className="w-[100%] flex items-center justify-center">
                     <div className="md:w-[62%] w-[100%] flex items-start justify-center mb-7 md:mb-9">
-                        <Heading count="05." title="Education" />
+                        <Heading count="05." title="Experience & Education" />
                     </div>
                 </div>
 

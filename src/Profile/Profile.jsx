@@ -5,7 +5,7 @@ import { HiCake } from "react-icons/hi2";
 import { SlCalender } from "react-icons/sl";
 import Footer from "../Footer/Footer";
 import pro from '../assets/pro.jpg';
-import image from '../assets/newImg.jpg';
+import image from '../assets/profile-avatar.jpg';
 import ProfileNav from "./ProfileNav";
 import Banner from "../assets/Banner.png"
 import Message from "../Contact/Message";
@@ -31,19 +31,16 @@ function Profile() {
                     </div>
                     <div className="h-[55%] w-[100%]  md:px-8 px-2 py-24 md:py-24">
                         <h1 className="text-5xl roboto-bold text-lightModeText dark:text-[#64FFDA] mb-2">Siddhi Singh</h1>
-                        <p className="text-[15px] basic dark:text-darkModeText text-lightModeText">Brings idea to life with code..!✨</p>
+                        <p className="text-[15px] basic dark:text-darkModeText text-lightModeText">Bringing ideas to life with code & modern mobile apps!✨</p>
                         <p className="text-[14px] basic dark:text-darkModeText text-lightModeText">
-                            Frontend Developer | Freelance Coder | Diploma Student at Government Girls Polytechnic, Ballia
+                            React Native Developer @ Macreel Infosoft | B.Tech CSE (Data Science) | Freelance Developer
                         </p>
-                        <div className="flex items-start justify-start gap-4">
+                        <div className="flex items-start justify-start gap-4 mt-2">
                             <div className="flex items-center justify-center basic gap-1 dark:text-darkModeText text-lightModeText">
-                                <PiStudentFill className="size-5" /> <span className="basic">Student</span>
+                                <PiStudentFill className="size-5" /> <span className="basic">B.Tech CSE (Data Science)</span>
                             </div>
                             <div className="flex items-center justify-center basic gap-1 dark:text-darkModeText text-lightModeText">
-                                <HiCake className="size-5" /> <span>October 18th</span>
-                            </div>
-                            <div className="flex items-center justify-center basic gap-1 dark:text-darkModeText text-lightModeText">
-                                <SlCalender className="size-5" /> <span>Joined Jan 11</span>
+                                <HiCake className="size-5" /> <span>Noida, UP</span>
                             </div>
                         </div>
                         <div className="mt-10 text-center flex items-center justify-center flex-col gap-3">

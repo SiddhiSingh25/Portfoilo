@@ -7,7 +7,7 @@ function Project() {
     const [showAll, setShowAll] = useState(false);
     const [count, setCount] = useState(2);
     
-    const totalProjects = 5; 
+    const totalProjects = 3; 
 
     const handleBtn = () => {
         if (showAll) {

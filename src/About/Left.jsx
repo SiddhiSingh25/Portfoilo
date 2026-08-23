@@ -48,20 +48,20 @@ function Left() {
       <Heading count="01." title="About me" className="title  mb-8" />
       <div className="mt-16">
         <p className="text-lightModeText  dark:text-[#D1D5DB] mb-5 roboto text-[2.4vh] heading1">
-          Howdy! I'm <LinkText text="Siddhi Singh." link="https://github.com/SiddhiSingh25" />
-          A web developer, who enjoys building, learning, and exploring things that live on the web.
+          Hello! I'm <LinkText text="Siddhi Singh." link="https://github.com/SiddhiSingh25" />
+          A passionate React Native & Web Developer based in Noida, UP.
         </p>
         <p className="text-lightModeText  dark:text-[#D1D5DB] mb-5 roboto text-[2.4vh] heading2">
-          I’ve been coding for over a year and have built <LinkText text="27 frontend websites" /> for practice.
+          Currently working as a full-time <LinkText text="React Native Developer" link="https://macreel.co.in/" /> at Macreel Infosoft Pvt. Ltd., while pursuing my <LinkText text="B.Tech in CSE (Data Science)" />.
         </p>
         <p className="text-lightModeText  dark:text-[#D1D5DB] mb-5 roboto text-[2.4vh]">
-          I’m in my <LinkText text="final year" /> of a diploma in IT, performing well <LinkText text="academically" />.
+          I build cross-platform mobile apps, modern web applications, and help freelance clients turn ideas into clean, functional code.
         </p>
       </div>
       <div className="flex items-center justify-start flex-col">
-        <p className="text-[#454a59] dark:text-[#D1D5DB] mb-5">Here are a few technologies I love working on:</p>
-        <div className="md:h-[18vh] h-[12vh] px-5 flex items-start justify-center flex-col flex-wrap w-[100%] gap-2 mb-10 md:mb-0">
-          {["HTML", "CSS", "JavaScript", "React", "Java(Core)", "Tailwind", "GSAP", "Locomotive Scroll"].map((item) => (
+        <p className="text-[#454a59] dark:text-[#D1D5DB] mb-5">Technologies & tools I specialize in:</p>
+        <div className="md:h-[20vh] h-[14vh] px-5 flex items-start justify-center flex-col flex-wrap w-[100%] gap-2 mb-10 md:mb-0">
+          {["React Native", "React.js", "JavaScript (ES6+)", "Tailwind CSS", "HTML5 & CSS3", "Java (Core)", "GSAP", "REST APIs", "Git & GitHub"].map((item) => (
             <div key={item} className="flex items-center justify-start gap-x-2 gap-y-2 skills-item">
               <IoTriangle className="text-[1vh] rotate-90 text-lightModeHeading dark:text-darkModeHeading" />
               <p className="text-[14px] Roboto text-lightModeText  dark:text-[#D1D5DB]">{item}</p>

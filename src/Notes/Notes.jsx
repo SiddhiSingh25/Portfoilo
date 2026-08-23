@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 function Notes() {
     let [projectCount, setProjectCount] = useState(4);
     let [showPr, setShowPr] = useState(false);
-    let count = 8;
+    let count = 6;
     const handleBtn = (e)=>{
         if(showPr){
             setProjectCount(2);

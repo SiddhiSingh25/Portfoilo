@@ -1,4 +1,4 @@
-import Profile from "../assets/newImg.jpg";
+import Profile from "../assets/profile-avatar.jpg";
 
 function Right() {
     return (

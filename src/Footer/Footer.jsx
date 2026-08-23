@@ -31,7 +31,7 @@ function Footer() {
             <FaTwitter size={24} />
           </a>
           <a 
-            href="mailto:siddhisingh18102005@gmail.com" 
+            href="mailto:singhsiddhi960@gmail.com" 
             className="text-lightModeHeading dark:text-darkModeHeading hover:text-lightModeText dark:hover:text-darkmodeSpan transition-colors"
           >
             <FaEnvelope size={24} />

@@ -1,82 +1,57 @@
 import { FiGithub } from "react-icons/fi";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { useState, useEffect } from "react";
+import schoolImg from "../assets/aisgazipur-in.png";
+import danceImg from "../assets/dance-academy.png";
+import nestmartImg from "../assets/nest-mart.png";
 import "./Project.css";
 
 function ProjectBox({ showAll, count }) {
   const details = [
     {
-      projectName: "Scriptified",
+      projectName: "Freelance School Website",
       projectDesc:
-        "A blazing fast Progressive Web App built in NextJS and Tailwind CSS. Built for publishing our curated weekly newsletters on JavaScript & React.",
-      techStack: ["HTML", "CSS", "JavaScript", "React", "Tailwind", "Gsap"],
-      gitHub: "alpha",
-      viewLink: "sigma",
-      img: "https://img.freepik.com/premium-photo/mobile-modern-playing-video-with-headphone-floating-pink-background-podcast-listening-entertainment-musical-studio-karaoke-concept-wireless-media-connection-streaming-3d-render-illustration_598821-1648.jpg",
+        "A responsive and professional school website designed to provide students and parents with essential information about the school, including admissions, academics, facilities, announcements, gallery, and contact details.",
+      techStack: ["React.js", "Tailwind CSS", "JavaScript", "Framer Motion"],
+      gitHub: "https://github.com/SiddhiSingh25",
+      viewLink: "https://www.aisgazipur.in/",
+      img: schoolImg,
       containerClass: "row",
       dataClass: "items-end", // flex-end on large screens
       dataClassPhone: "items-center", // center on small screens
       textAlign: "right",
       zIdx: "0",
+      justify: "flex-end"
     },
     {
-      projectName: "E-Commerce",
+      projectName: "Dance Academy Website",
       projectDesc:
-        "An e-commerce website built with NextJS, Tailwind CSS, and MongoDB for managing products and orders.",
-      techStack: ["HTML", "CSS", "JavaScript", "React", "Tailwind", "MongoDB"],
-      gitHub: "alpha",
-      viewLink: "sigma",
-      img: "https://siddhisingh.netlify.app/ecommerce-10.webp",
+        "A modern and interactive dance academy website showcasing dance programs, academy information, instructors, gallery, workshops, and contact/enquiry sections with smooth animations.",
+      techStack: ["React.js", "Tailwind CSS", "JavaScript", "GSAP", "Framer Motion"],
+      gitHub: "https://github.com/SiddhiSingh25",
+      viewLink: "https://dance-academy-psi.vercel.app/",
+      img: danceImg,
       containerClass: "row-reverse",
       dataClass: "items-start", // flex-start on large screens
       textAlign: "left",
       dataClassPhone: "items-center", // center on small screens
       zIdx: "9999",
-      justify : "flex-start"
+      justify: "flex-start"
     },
     {
-      projectName: "Scriptified",
+      projectName: "NestMart — E-Commerce",
       projectDesc:
-        "A blazing fast Progressive Web App built in NextJS and Tailwind CSS. Built for publishing our curated weekly newsletters on JavaScript & React.",
-      techStack: ["HTML", "CSS", "JavaScript", "React", "Tailwind", "Gsap"],
-      gitHub: "alpha",
-      viewLink: "sigma",
-      img: "https://img.freepik.com/premium-photo/mobile-modern-playing-video-with-headphone-floating-pink-background-podcast-listening-entertainment-musical-studio-karaoke-concept-wireless-media-connection-streaming-3d-render-illustration_598821-1648.jpg",
+        "A full-stack grocery e-commerce platform featuring product browsing, categories, product details, search, shopping cart, user authentication, and an organized online shopping experience.",
+      techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+      gitHub: "https://github.com/SiddhiSingh25",
+      viewLink: "https://nest-mart-five.vercel.app/",
+      img: nestmartImg,
       containerClass: "row",
       dataClass: "items-end", // flex-end on large screens
       dataClassPhone: "items-center", // center on small screens
       textAlign: "right",
       zIdx: "0",
-
-    },
-    {
-      projectName: "E-Commerce",
-      projectDesc:
-        "An e-commerce website built with NextJS, Tailwind CSS, and MongoDB for managing products and orders.",
-      techStack: ["HTML", "CSS", "JavaScript", "React", "Tailwind", "MongoDB"],
-      gitHub: "alpha",
-      viewLink: "sigma",
-      img: "https://siddhisingh.netlify.app/ecommerce-10.webp",
-      containerClass: "row-reverse",
-      dataClass: "items-start", // flex-start on large screens
-      textAlign: "left",
-      dataClassPhone: "items-center", // center on small screens
-      zIdx: "9999",
-      justify : "flex-start"
-    },
-    {
-      projectName: "Scriptified",
-      projectDesc:
-        "A blazing fast Progressive Web App built in NextJS and Tailwind CSS. Built for publishing our curated weekly newsletters on JavaScript & React.",
-      techStack: ["HTML", "CSS", "JavaScript", "React", "Tailwind", "Gsap"],
-      gitHub: "alpha",
-      viewLink: "sigma",
-      img: "https://img.freepik.com/premium-photo/mobile-modern-playing-video-with-headphone-floating-pink-background-podcast-listening-entertainment-musical-studio-karaoke-concept-wireless-media-connection-streaming-3d-render-illustration_598821-1648.jpg",
-      containerClass: "row",
-      dataClass: "items-end", // flex-end on large screens
-      dataClassPhone: "items-center", // center on small screens
-      textAlign: "right",
-      zIdx: "0",
+      justify: "flex-end"
     }
   ];
 

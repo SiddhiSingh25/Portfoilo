@@ -2,58 +2,50 @@ import { FiFolder } from "react-icons/fi";
 import { VscGithubAlt } from "react-icons/vsc";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 function ProjectNote({ showPr, projectCount }) {
-    let projectDetails = [{
-        github: "https://github.com/SiddhiSingh25/Mini-Music-Player",
-        viewProject: "https://musicplayerbysid.netlify.app",
-        projectName: "A mini-music player",
-        projectDesc: "A lightweight mini music player created using HTML, CSS, and JavaScript, featuring basic controls for play, pause, and skip. ",
-        techStack: ["HTML", "CSS", "JavaScript", "Responsive"]
-    }, {
-        github: "https://github.com/SiddhiSingh25/Airbnb",
-        viewProject: "https://siddhisingh25.github.io/Airbnb/",
-        projectName: "Airbnb UI Clone",
-        projectDesc: "Airbnb UI clone using HTML and CSS with smooth transitions for a clean, responsive design",
-        techStack: ["HTML", "CSS", "Responsive"]
-    }, {
-        github: "https://github.com/SiddhiSingh25/Animated-Web",
-        viewProject: "https://siddhisingh25.github.io/Animated-Web/",
-        projectName: "Awwards site clone",
-        projectDesc: "Awards site clone built with HTML, CSS, and GSAP, featuring smooth animations and responsive design for a dynamic and interactive user experience.",
-        techStack: ["HTML", "CSS", "GSAP", "Animation", "Resposive"]
-    }
-        , {
-        github: "https://github.com/SiddhiSingh25/Pflo",
-        viewProject: "https://siddhisingh.netlify.app/",
-        projectName: "Portfolio",
-        projectDesc: "Portfolio website built with HTML, CSS, and JavaScript, featuring smooth animations with the help of gsap for a better User Experience.",
-        techStack: ["HTML", "CSS", "JavaScript", "GSAP"]
-    },
-    {
-        github: "https://github.com/SiddhiSingh25/Mini-Music-Player",
-        viewProject: "https://musicplayerbysid.netlify.app",
-        projectName: "A mini-music player",
-        projectDesc: "A lightweight mini music player created using HTML, CSS, and JavaScript, featuring basic controls for play, pause, and skip. ",
-        techStack: ["HTML", "CSS", "JavaScript", "Responsive"]
-    }, {
-        github: "https://github.com/SiddhiSingh25/Airbnb",
-        viewProject: "https://siddhisingh25.github.io/Airbnb/",
-        projectName: "Airbnb UI Clone",
-        projectDesc: "Airbnb UI clone using HTML and CSS with smooth transitions for a clean, responsive design",
-        techStack: ["HTML", "CSS", "Responsive"]
-    }, {
-        github: "https://github.com/SiddhiSingh25/Animated-Web",
-        viewProject: "https://siddhisingh25.github.io/Animated-Web/",
-        projectName: "Awwards site clone",
-        projectDesc: "Awards site clone built with HTML, CSS, and GSAP, featuring smooth animations and responsive design for a dynamic and interactive user experience.",
-        techStack: ["HTML", "CSS", "GSAP", "Animation", "Resposive"]
-    }
-        , {
-        github: "https://github.com/SiddhiSingh25/Pflo",
-        viewProject: "https://siddhisingh.netlify.app/",
-        projectName: "Portfolio",
-        projectDesc: "Portfolio website built with HTML, CSS, and JavaScript, featuring smooth animations with the help of gsap for a better User Experience.",
-        techStack: ["HTML", "CSS", "JavaScript", "GSAP"]
-    }];
+    let projectDetails = [
+        {
+            github: "https://github.com/SiddhiSingh25",
+            viewProject: "https://nest-mart-five.vercel.app/",
+            projectName: "NestMart — E-Commerce",
+            projectDesc: "A full-stack grocery e-commerce platform featuring product browsing, categories, search, shopping cart, and user authentication.",
+            techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind"]
+        },
+        {
+            github: "https://github.com/SiddhiSingh25",
+            viewProject: "https://github.com/SiddhiSingh25",
+            projectName: "Job Portal",
+            projectDesc: "Full-stack job portal web application for searching job listings, candidate profile management, and job applications.",
+            techStack: ["React.js", "Node.js", "Express.js", "MongoDB"]
+        },
+        {
+            github: "https://github.com/SiddhiSingh25/Airbnb",
+            viewProject: "https://siddhisingh25.github.io/Airbnb/",
+            projectName: "Airbnb UI Clone",
+            projectDesc: "Airbnb UI clone using HTML and CSS with smooth transitions for a clean, responsive user experience.",
+            techStack: ["HTML", "CSS", "JavaScript", "Responsive"]
+        },
+        {
+            github: "https://github.com/SiddhiSingh25/Pflo",
+            viewProject: "https://siddhisingh.netlify.app/",
+            projectName: "Personal Portfolio",
+            projectDesc: "Personal portfolio website built with React and Tailwind CSS featuring GSAP animations and interactive UI components.",
+            techStack: ["React.js", "Tailwind", "GSAP", "Framer Motion"]
+        },
+        {
+            github: "https://github.com/SiddhiSingh25/Mini-Music-Player",
+            viewProject: "https://musicplayerbysid.netlify.app",
+            projectName: "Mini Music Player",
+            projectDesc: "A lightweight mini music player created using HTML, CSS, and JavaScript, featuring play, pause, and skip controls.",
+            techStack: ["HTML", "CSS", "JavaScript", "Responsive"]
+        },
+        {
+            github: "https://github.com/SiddhiSingh25/Animated-Web",
+            viewProject: "https://siddhisingh25.github.io/Animated-Web/",
+            projectName: "Awwards Site Clone",
+            projectDesc: "Awards site clone built with HTML, CSS, and GSAP, featuring smooth animations and responsive design.",
+            techStack: ["HTML", "CSS", "GSAP", "Animation"]
+        }
+    ];
     let alpha = showPr ? projectDetails : projectDetails.slice(0, projectCount);
     console.log(alpha)
     return (

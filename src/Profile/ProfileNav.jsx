@@ -39,7 +39,7 @@ function ProfileNav() {
                     <NavLink to="/addtoHome">
                         <div className='px-2 py-1 border-[.01rem] border-solid dark:border-[#64FFDA] border-lightModeHeading rounded-[3px] flex items-center justify-center' style={{ transition: "0.25s cubic-bezier(0.645, 0.045, 0.355, 1)" }}>
                             <h1 className='text-[2.3vh] font-light mr-2 leading-[1] text-lightModeHeading dark:text-[#64FFDA]'>Back to home</h1>
-                            <img src={ProfileImg} alt="Profile" className='h-[3.8vh] w-[3.8vh] rounded-full object-cover object-center' />
+                            <img src={ProfileImg} alt="Profile" className='h-[3.8vh] w-[3.8vh] rounded-full object-cover object-top' />
                         </div>
                     </NavLink>
                 </div>

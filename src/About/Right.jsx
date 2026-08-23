@@ -9,7 +9,7 @@ function Right() {
                         <img 
                             src={Profile} 
                             alt="" 
-                            className="h-[100%] w-[100%] object-cover object-center rounded-[4px] image transition-transform duration-300 ease-in-out hover:translate-x-2 hover:translate-y-2"
+                            className="h-[100%] w-[100%] object-cover object-top rounded-[4px] image transition-transform duration-300 ease-in-out hover:translate-x-2 hover:translate-y-2"
                         />
                     </div>
                 </div>

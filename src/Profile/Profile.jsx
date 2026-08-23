@@ -19,7 +19,7 @@ function Profile() {
                 <div className="md:h-[42%] h-[30%] bg-lightModeBg dark:bg-[#18263E] opacity-3 relative bg-cover bg-center banner">
                         <div className="flex items-center justify-between md:h-[26vh] w-[100%] md:w-[50vw] top-[10.25rem] absolute md:top-40 md:px-10">
                             <div className="md:h-[100%] h-[32vw]  w-[32vw] md:w-[26vh] rounded-full border-10 border-solid border-lightModeText dark:border-[#2aab8d]">
-                                <img src={image} alt="" className="object-cover object-center h-[100%] w-[100%] rounded-full"/>
+                                <img src={image} alt="" className="object-cover object-top h-[100%] w-[100%] rounded-full"/>
                             </div>
                             <button className="px-4 py-2 rounded-full dark:bg-[#64FFDA] bg-lightModeHeading text-[#F8F9FA] flex items-center justify-center gap-2 mt-[8vh]">
                                 <a href="https://twitter.com/SiddhiSingh07" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">

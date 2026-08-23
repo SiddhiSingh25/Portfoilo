@@ -46,7 +46,7 @@ function Nav() {
                     <ThemeChanger className="flex md:hidden"/>
                     <NavLink to="/profile" className="profile">
                         <div className='px-2 py-1 border-[.01rem] border-none rounded-[3px] flex items-center justify-center'>
-                            <img src={ProfileImg} alt="Profile" className='h-[4vh] w-[4vh] rounded-full object-cover border-2 border-lightModeHeading dark:border-darkModeHeading' />
+                            <img src={ProfileImg} alt="Profile" className='h-[4vh] w-[4vh] rounded-full object-cover object-top border-2 border-lightModeHeading dark:border-darkModeHeading' />
                         </div>
                     </NavLink>
                     <button onClick={toggleMobileMenu} className='text-lightModeHeading dark:text-darkModeHeading'>
@@ -73,7 +73,7 @@ function Nav() {
                     <NavLink to="/profile" className='hidden md:flex profile'>
                         <div className='px-2 py-1 border-[.01rem] border-lightModeHeading dark:border-darkModeHeading border-solid rounded-[3px] flex items-center justify-center'>
                             <h1 className='text-[2.3vh] font-light mr-2 text-lightModeHeading dark:text-darkModeHeading'>Profile</h1>
-                            <img src={ProfileImg} alt="Profile" className='h-[3.8vh] w-[3.8vh] rounded-full object-cover border-2 border-lightModeHeading dark:border-darkModeHeading' />
+                            <img src={ProfileImg} alt="Profile" className='h-[3.8vh] w-[3.8vh] rounded-full object-cover object-top border-2 border-lightModeHeading dark:border-darkModeHeading' />
                         </div>
                     </NavLink>
                 </div>

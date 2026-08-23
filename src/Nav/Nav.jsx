@@ -38,7 +38,9 @@ function Nav() {
                 
                 {/* Logo */}
                 <div className="logo">
-                    <h1 className='text-lightModeHeading dark:text-darkModeHeading text-xl'>Siddhyy</h1>
+                    <NavLink to="/" className='text-lightModeHeading dark:text-darkModeHeading text-xl font-bold hover:opacity-80 transition-opacity'>
+                        Siddhyy
+                    </NavLink>
                 </div>
 
                 {/* Mobile Menu Toggle and Profile */}

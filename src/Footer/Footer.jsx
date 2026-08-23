@@ -2,12 +2,12 @@ import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa'; //
 
 function Footer() {
   return (
-    <footer className="bg-lightModeBg dark:bg-darkModeBg py-6 mt-6 border-[0.001rem] border-solid border-lightModeHeading dark:border-darkModeHeading">
+    <footer className="bg-lightModeBg dark:bg-darkModeBg py-6 mt-6 border-t border-t-lightModeHeading dark:border-t-darkModeHeading border-b-0 border-x-0">
       <div className="container mx-auto flex flex-col items-center justify-center space-y-4">
         {/* Social Media Links */}
         <div className="flex space-x-6">
           <a 
-            href="https://github.com/SiddhiSingh07" 
+            href="https://github.com/SiddhiSingh25" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="text-lightModeHeading dark:text-darkModeHeading hover:text-lightModeText dark:hover:text-darkmodeSpan transition-colors"

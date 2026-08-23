@@ -32,13 +32,15 @@ function ProfileNav() {
         >
             <div className='h-[100%] w-[88%] border-[0.01rem] flex items-center justify-between border-t-transparent border-l-transparent border-r-transparent dark:border-t-transparent dark:border-l-transparent dark:border-r-transparent border-solid border-lightModeHeading dark:border-darkModeHeading'>
                 <div className="logo">
-                    <h1 className='text-lightModeHeading dark:text-[#64FFDA]'>Siddhyy</h1>
+                    <NavLink to="/" className='text-lightModeHeading dark:text-[#64FFDA] text-xl font-bold hover:opacity-80 transition-opacity'>
+                        Siddhyy
+                    </NavLink>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                     <ThemeChanger />
-                    <NavLink to="/addtoHome">
-                        <div className='px-2 py-1 border-[.01rem] border-solid dark:border-[#64FFDA] border-lightModeHeading rounded-[3px] flex items-center justify-center' style={{ transition: "0.25s cubic-bezier(0.645, 0.045, 0.355, 1)" }}>
-                            <h1 className='text-[2.3vh] font-light mr-2 leading-[1] text-lightModeHeading dark:text-[#64FFDA]'>Back to home</h1>
+                    <NavLink to="/">
+                        <div className='px-3 py-1 border-[.01rem] border-solid dark:border-[#64FFDA] border-lightModeHeading rounded-[3px] flex items-center justify-center' style={{ transition: "0.25s cubic-bezier(0.645, 0.045, 0.355, 1)" }}>
+                            <h1 className='text-[2.3vh] font-light mr-2 leading-[1] text-lightModeHeading dark:text-[#64FFDA]'>Home</h1>
                             <img src={ProfileImg} alt="Profile" className='h-[3.8vh] w-[3.8vh] rounded-full object-cover object-top' />
                         </div>
                     </NavLink>

@@ -106,7 +106,7 @@ function ProjectBox({ showAll, count }) {
             } items-start text-left`}
           >
             <span className="dark:text-darkModeHeading text-lightModeHeading text-xs sm:text-sm font-semibold tracking-wider uppercase">
-              Featured Project
+              Client Project
             </span>
             <h3 className="text-2xl sm:text-3xl md:text-4xl dark:text-darkModeText text-lightModeText roboto-bold leading-tight">
               <a href={elm.viewLink} target="_blank" rel="noopener noreferrer" className="hover:text-lightModeHeading dark:hover:text-darkModeHeading transition-colors">

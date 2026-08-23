@@ -61,7 +61,7 @@ function Education() {
                 id="education"
             >
                 <div className="w-full max-w-5xl flex items-start justify-start mb-8 md:mb-12">
-                    <Heading count="05." title="Experience & Education" />
+                    <Heading count="04." title="Experience & Education" />
                 </div>
 
                 <div className="w-full max-w-5xl flex items-start justify-between flex-col md:flex-row gap-8 md:gap-12">

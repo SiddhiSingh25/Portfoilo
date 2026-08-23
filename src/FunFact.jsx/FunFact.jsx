@@ -22,14 +22,13 @@ function FunFact() {
     }
     return (
         <>
-            <div className="h-[80vh] w-[100vw] flex items-center justify-center md:py-10 md:px-16 py-4 px-5 lg:px-6 lg:py-6 ">
-                <div className="h-[90%] lg:h-[80%] w-[100%] md:w-[88%] flex items-start justify-center flex-col md:flex-row lg lg-[100%] lg:flex-col">
-                    <div className="left w-[100%] md:w-[37%] h-[70%] my-3 flex items-start justify-start gap-8 flex-col lg:w-[90%] ">
+            <div className="w-full py-12 md:py-16 px-4 sm:px-8 md:px-16 flex items-center justify-center">
+                <div className="w-full max-w-7xl flex items-start justify-center flex-col gap-6">
+                    <div className="w-full max-w-xl flex items-start justify-start gap-6 flex-col">
                         <Heading count="02." title="Fun Fact" />
                         <Button btnData="Shuffle" handleBtn={handleBtn} />
-                        <p className="text-lightModeText  dark:text-[#D1D5DB] mb-5 roboto text-[2.4vh]">{randomFact}</p>
+                        <p className="text-lightModeText dark:text-[#D1D5DB] roboto text-base sm:text-lg leading-relaxed">{randomFact}</p>
                     </div>
-                    <div className="md:w-[40%] h-[100%] lg:hidden"></div>
                 </div>
             </div>
         </>

@@ -17,7 +17,7 @@ function Contact() {
                 id="contact"
             >
                 <div className="w-full max-w-2xl flex items-center justify-center mb-6">
-                    <Heading count="06." title="Get In Touch" />
+                    <Heading count="05." title="Get In Touch" />
                 </div>
 
                 <div className="w-full max-w-2xl rounded-lg border-2 border-lightModeHeading dark:border-darkModeHeading p-6 sm:p-10 flex items-center justify-center flex-col gap-6 shadow-md bg-lightModeBox/50 dark:bg-[#172A45]/50">

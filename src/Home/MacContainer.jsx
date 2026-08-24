@@ -1,11 +1,47 @@
-import { useGLTF, useTexture, useScroll } from "@react-three/drei";
+import { useGLTF, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import * as THREE from "three";
 
 function MacContainer() {
     const model = useGLTF("./mac.glb");
-    const tex = useTexture("./red.jpg");
+    const [videoTexture, setVideoTexture] = useState(null);
+
+    useEffect(() => {
+        const video = document.createElement("video");
+        video.src = "./videoSid.mp4";
+        video.crossOrigin = "Anonymous";
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+
+        video.onerror = () => {
+            if (video.src.includes("videoSid.mp4")) {
+                video.src = "./video.mp4";
+                video.play().catch(() => {});
+            }
+        };
+
+        video.play().catch((err) => console.log("Autoplay video error:", err));
+
+        const texture = new THREE.VideoTexture(video);
+        texture.colorSpace = THREE.SRGBColorSpace;
+        texture.minFilter = THREE.LinearFilter;
+        texture.magFilter = THREE.LinearFilter;
+        texture.generateMipmaps = false;
+        texture.anisotropy = 16;
+        texture.format = THREE.RGBAFormat;
+
+        setVideoTexture(texture);
+
+        return () => {
+            video.pause();
+            video.removeAttribute("src");
+            video.load();
+            texture.dispose();
+        };
+    }, []);
+
     const meshes = {};
 
     // Traverse the scene to collect meshes
@@ -13,18 +49,14 @@ function MacContainer() {
         if (e.isMesh) meshes[e.name] = e;
     });
 
-    // Apply texture and material properties if matte mesh exists
-    if (meshes.matte) {
-        const material = meshes.matte.material;
-    
-        // Use a MeshBasicMaterial if you don't want lighting effects to alter the texture
-        material.map = tex;
-        material.emissiveIntensity = 0; // Ensure no emissive light affects appearance
-        material.metalness = 0; // Make sure it is not reflective
-        material.roughness = 1; // Make it completely rough (non-reflective)
-        material.needsUpdate = true; // Make sure the material updates
+    // Apply video texture with MeshBasicMaterial (no environmental lighting filters, reflections, or tone-mapping overlays)
+    if (meshes.matte && videoTexture) {
+        meshes.matte.material = new THREE.MeshBasicMaterial({
+            map: videoTexture,
+            toneMapped: false,
+        });
+        meshes.matte.material.needsUpdate = true;
     }
-
 
     // Use useScroll to get scroll data
     const data = useScroll();
@@ -32,7 +64,7 @@ function MacContainer() {
     // Update the rotation based on scroll position
     useFrame(() => {
         if (meshes.screen) {
-            meshes.screen.rotation.x = THREE.MathUtils.degToRad(180 - data.offset * 90);
+            meshes.screen.rotation.x = THREE.MathUtils.degToRad(180 - (data?.offset || 0) * 90);
         }
     });
 

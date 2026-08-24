@@ -15,13 +15,16 @@ export default {
         darkModeText: "#8892B0",
         darkmodeSpan : "#E6F1FF",
         darkModeBox : "#172A45",
-        lightModeBg: '#F8F9FA',  
-        lightModeText: '#030507',
-        lightModeHeading : "#CC0088",
-        lightModeBox: "#EC407A",
-        //lightModeHeading : "#42A5F5",
-        lightmodeSpan : "#bd258c",
-        lightBlack : "#1F2937"// Custom light mode text (optional)
+
+        lightModeBg: '#FFFFFF',        // --color-background
+        lightModeText: '#1B1C1B',      // --color-text
+        lightModeHeading : "#4A62B0",  // --color-link
+        lightModeBox: "#D3DEFA",       // --color-surface / --color-primary
+        lightmodeSpan : "#3A4F96",     // --color-link-hover
+        lightModeMuted: '#6B6E6A',     // --color-muted
+        lightModeBorder: '#E4E8F2',    // --color-border
+        lightModeSurface: '#F7F9FD',   // --color-surface
+        lightBlack : "#1F2937"
       },
     },
   },

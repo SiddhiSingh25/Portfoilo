@@ -10,7 +10,7 @@ function Left() {
 
       <div className="mt-4 space-y-4">
         <p className="text-lightModeText dark:text-[#D1D5DB] roboto text-sm sm:text-base leading-relaxed">
-          I'm a <span className="font-bold text-gray-900 dark:text-[#E6F1FF]">20yo Developer</span> balancing a corporate career with my graduation.
+          I'm a <span className="font-bold text-gray-900 dark:text-[#E6F1FF]">20yo Developer</span> balancing a corporate career with my graduation and freelance on the side.
           {/* while building modern web experiences and learning something new every day. */}
         </p>
 

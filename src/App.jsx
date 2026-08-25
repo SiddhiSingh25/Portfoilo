@@ -3,10 +3,10 @@ import Nav from './Nav/Nav';
 import Home from './Home/Home'
 import React from "react";
 import About from './About/About';
-import FunFact from './FunFact.jsx/FunFact';
 import Project from './Project/Project';
 import Notes from './Notes/Notes'
 import Education from './Education/Education';
+import Testimonials from './Testimonials/Testimonials';
 import Contact from './Contact/Contact';
 function App() {
   return (
@@ -15,10 +15,10 @@ function App() {
     <Nav/>
     <Home/>
     <About/>
-    <FunFact/>
     <Project/>
     <Notes/>
     <Education/>
+    <Testimonials/>
     <Contact/>
     </div>
     </>

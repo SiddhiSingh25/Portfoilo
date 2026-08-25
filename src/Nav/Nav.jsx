@@ -38,8 +38,9 @@ function Nav() {
                 
                 {/* Logo */}
                 <div className="logo">
-                    <NavLink to="/" className='text-lightModeHeading dark:text-darkModeHeading text-xl font-bold hover:opacity-80 transition-opacity'>
-                        Siddhyy
+                    <NavLink to="/" className='flex items-center hover:opacity-80 transition-opacity'>
+                        <img src="/lightLogo.png" alt="Siddhyy Logo" className="h-8 md:h-10 w-auto dark:hidden block object-contain" />
+                        <img src="/darkLogo.png" alt="Siddhyy Logo" className="h-8 md:h-10 w-auto dark:block hidden object-contain" />
                     </NavLink>
                 </div>
 
@@ -60,7 +61,7 @@ function Nav() {
 
                 {/* Desktop Menu */}
                 <div className='hidden md:flex items-center space-x-4'>
-                    {["HOME", "ABOUT", "PROJECTS", "EDUCATION", "CONTACT"].map((elm, idx) => (
+                    {["HOME", "ABOUT", "PROJECTS", "EDUCATION", "TESTIMONIALS", "CONTACT"].map((elm, idx) => (
                         <div key={idx} className='text-[13px] flex items-center justify-center link'>
                             <p className='text-lightModeHeading dark:text-darkModeHeading'>0{idx+1}.</p>
                             <a className='text-lightModeText dark:text-darkModeText' href={`#${elm.toLowerCase()}`}>{elm}</a>
@@ -85,7 +86,7 @@ function Nav() {
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
                 <div className='absolute top-[10.8vh] left-0 w-full bg-lightModeBg dark:bg-darkModeBg flex flex-col items-center z-50 transition-transform duration-300'>
-                    {["HOME", "ABOUT", "PROJECTS", "EDUCATION", "CONTACT"].map((elm, idx) => (
+                    {["HOME", "ABOUT", "PROJECTS", "EDUCATION", "TESTIMONIALS", "CONTACT"].map((elm, idx) => (
                         <div key={idx} className='text-lightModeText dark:text-darkModeText text-sm flex items-center space-x-2 py-4'>
                             <p className='text-lightModeHeading dark:text-darkModeHeading'>0{idx+1}.</p>
                             <a className='text-lightModeText dark:text-darkModeText ' href={`#${elm.toLowerCase()}`}>{elm}</a>

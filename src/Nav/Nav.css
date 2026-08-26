@@ -1,3 +1,18 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.25s ease-out forwards;
+}
+
 .link{
     position: relative;
 }
@@ -17,8 +32,8 @@
 html.dark .link::after{
     background-color: #64FFDA;
 }
-.navBorder{
-    border-top: transparent;
-    border-left: transparent;
-    border-right: transparent;
+.navBorder {
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
 }

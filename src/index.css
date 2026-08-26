@@ -1,6 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fredoka:wght@600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --color-primary: #d3defa;
+    --color-accent: #d3defa;
+    --color-background: #ffffff;
+    --color-text: #1b1c1b;
+    --color-link: #4a62b0;
+    --color-link-hover: #3a4f96;
+    --color-muted: #6b6e6a;
+    --color-border: #e4e8f2;
+    --color-surface: #f7f9fd;
+    --color-danger: #b42318;
+    --color-success: #027a48;
+}
 
 #root {
     min-height: 100vh;
@@ -20,119 +36,134 @@ body {
     min-height: 100%;
     width: 100%;
     overflow-x: hidden;
-    color: #fff;
-    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
-    background-color: #F8F9FA;
+    color: var(--color-text);
+    font-family: "DM Sans", sans-serif;
+    background-color: var(--color-background);
 }
-html.dark body{
+
+html.dark body {
     background-color: #0A192F;
 }
+
 ::selection {
-    background-color: rgb(48, 60, 85);
-    color: rgb(204, 214, 246);
+    background-color: rgb(211, 222, 250);
+    color: rgb(27, 28, 27);
 }
 
 .basic {
-    font-family: "Poppins", sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
 .bold {
-    font-family: "Poppins", sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-weight: 600;
     font-style: normal;
 }
 
 .roboto {
-    font-family: "Roboto", sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
 .roboto-bold {
-    font-family: "Roboto", sans-serif;
-    font-weight: 600;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
     font-style: normal;
 }
 
-/*a {
-    color: #64FFDA;
+.font-fredoka {
+    font-family: 'Fredoka', sans-serif;
 }
-*/
+
+.font-caveat {
+    font-family: 'Caveat', cursive;
+}
+
+.font-cormorant {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
 .common {
     position: relative;
 }
 
 .common a {
-    position: relative; /* Make sure position is relative for the pseudo-element positioning */
-  }
-  
-  .common a::after {
+    position: relative;
+}
+
+.common a::after {
     content: '';
     width: 0;
     height: 1px;
-    background: #CC0088; /* Default color for light mode */
+    background: #4A62B0;
+    /* Light mode link color */
     position: absolute;
     left: 0;
     bottom: -1px;
     transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
-  }
-  
-  .common a:hover::after {
-    width: 100%; /* Expand width on hover */
-  }
-  
-  /* Dark mode background for ::after pseudo-element */
-  html.dark .common a::after {
-    background-color: #64FFDA; /* Dark mode color */
-  }
-  
+}
+
 .common a:hover::after {
     width: 100%;
 }
 
-/**/
+/* Dark mode background for ::after pseudo-element */
+html.dark .common a::after {
+    background-color: #64FFDA;
+}
 
-.btn{
+.common a:hover::after {
+    width: 100%;
+}
+
+.btn {
     transition: box-shadow 0.5 ease;
 }
-.btn:hover{
-    box-shadow: inset 1px 1px 10px 1px #CC0088;
+
+.btn:hover {
+    box-shadow: inset 1px 1px 10px 1px #4A62B0;
 }
-html.dark .btn:hover{
+
+html.dark .btn:hover {
     box-shadow: inset 1px 1px 10px 1px #64FFDA;
 }
+
 .image-container {
-    background-color: #f2a9d9;
+    background-color: #D3DEFA;
     background-blend-mode: color;
-    position: relative;   
+    position: relative;
     border-radius: 4px;
-    overflow: hidden; 
-    transition: transform 0.3s ease; 
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
-html.dark .image-container{
+
+html.dark .image-container {
     background-color: #96ffe6fa;
 }
+
 .image {
     height: 100%;
     width: 100%;
-    object-fit: cover; /* Ensures the image covers the container */
-    mix-blend-mode: multiply; /* Applies blending mode */
+    object-fit: cover;
+    mix-blend-mode: multiply;
     transition: mix-blend-mode 0.3s ease;
-    transition: box-shadow 0.3s ease; /* Smooth transition for blend mode change */
+    transition: box-shadow 0.3s ease;
 }
 
 .image-container:hover .image {
-    mix-blend-mode: normal; /* Changes blend mode on hover */
+    mix-blend-mode: normal;
 }
 
 .image-container:hover {
-    transform: translate(8px, 8px); 
+    transform: translate(8px, 8px);
     background-color: transparent;
-    box-shadow: 0px 0px 20px 2px #CC0088;
+    box-shadow: 0px 0px 20px 2px #4A62B0;
 }
-html.dark .image-container:hover{
+
+html.dark .image-container:hover {
     box-shadow: 0px 0px 20px 2px #64FFDA;
 }
 
@@ -140,11 +171,61 @@ html.dark .image-container:hover{
 
 /**/
 .leftEducation {
-    overflow-y: scroll; /* Enable vertical scrolling */
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+    overflow-y: scroll;
+    /* Enable vertical scrolling */
+    scrollbar-width: none;
+    /* For Firefox */
+    -ms-overflow-style: none;
+    /* For Internet Explorer and Edge */
 }
 
 .leftEducation::-webkit-scrollbar {
-    display: none; /* For Chrome, Safari, and Opera */
+    display: none;
+    /* For Chrome, Safari, and Opera */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.4;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideRightToLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeftToRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-slide-right {
+    animation: slideRightToLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-left {
+    animation: slideLeftToRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

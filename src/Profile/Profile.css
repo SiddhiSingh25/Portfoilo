@@ -5,7 +5,7 @@ html.dark .banner{
     background-image: url('/src/assets/bn1.png');
 }
 .profileNavBtm{
-    border-bottom: .01rem solid #CC0088 ;
+    border-bottom: .01rem solid #4A62B0 ;
 }
 html.dark .profileNavBtm{
     border-bottom: .01rem solid #64FFDA;

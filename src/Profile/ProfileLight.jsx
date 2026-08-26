@@ -10,14 +10,14 @@ import Footer from "../Footer/Footer";
 function Profile(){
     return(
         <>
-        <div className="h-[100vh] w-[100vw] flex items-center justify-center bg-[#F8F9FA]">
+        <div className="h-[100vh] w-[100vw] flex items-center justify-center bg-[#FFFFFF]">
             <div className="h-[85vh] w-[50vw] ">
-                <div className="h-[42%] bg-[#D1E6FA] relative">
+                <div className="h-[42%] bg-[#D3DEFA] relative">
                 <div className="flex items-center justify-between h-[26vh] w-[50vw] absolute top-40 px-10">
                     <div className="h-[100%] w-[26vh] rounded-full border-10 border-solid border-slate-50">
                         <img src="https://th.bing.com/th/id/OIP.0DwUOybdwSMZxyBjCYED3AHaJ3?rs=1&pid=ImgDetMain"
                  alt="" className="object-cover object-center h-[100%] w-[100%] rounded-full"/></div>
-                 <button className="px-4 py-2 rounded-full bg-[#CC0088] text-[#F8F9FA] flex items-center justify-center gap-2 mt-[8vh]">
+                 <button className="px-4 py-2 rounded-full bg-[#4A62B0] text-[#FFFFFF] flex items-center justify-center gap-2 mt-[8vh]">
                     <p className="bold text-[2.6vh] font-extrabold  ">Follow</p> <FaTwitter className="size-5" /></button>
                  </div>
                 </div>

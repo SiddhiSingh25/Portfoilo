@@ -32,8 +32,9 @@ function ProfileNav() {
         >
             <div className='h-[100%] w-[88%] border-[0.01rem] flex items-center justify-between border-t-transparent border-l-transparent border-r-transparent dark:border-t-transparent dark:border-l-transparent dark:border-r-transparent border-solid border-lightModeHeading dark:border-darkModeHeading'>
                 <div className="logo">
-                    <NavLink to="/" className='text-lightModeHeading dark:text-[#64FFDA] text-xl font-bold hover:opacity-80 transition-opacity'>
-                        Siddhyy
+                    <NavLink to="/" className='flex items-center hover:opacity-80 transition-opacity'>
+                        <img src="/lightLogo.png" alt="Siddhyy Logo" className="h-8 md:h-10 w-auto dark:hidden block object-contain" />
+                        <img src="/darkLogo.png" alt="Siddhyy Logo" className="h-8 md:h-10 w-auto dark:block hidden object-contain" />
                     </NavLink>
                 </div>
                 <div className="flex items-center justify-center gap-2">

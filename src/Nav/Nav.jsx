@@ -35,18 +35,18 @@ function Nav() {
     return (
         <nav className={`sticky top-0 h-[10.8vh] w-full flex items-center justify-center bg-lightModeBg dark:bg-darkModeBg z-50 transition-transform duration-300 ${isNavVisible ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className='h-full navBorder w-[88%] flex items-center justify-between border-b-[0.01rem] border-t-transparent border-l-transparent border-r-transparent dark:border-t-transparent dark:border-l-transparent dark:border-r-transparent border-solid border-lightModeHeading dark:border-darkModeHeading'>
-                
+
                 {/* Logo */}
                 <div className="logo">
                     <NavLink to="/" className='flex items-center hover:opacity-80 transition-opacity'>
-                        <img src="/lightLogo.png" alt="Siddhyy Logo" className="h-8 md:h-10 w-auto dark:hidden block object-contain" />
-                        <img src="/darkLogo.png" alt="Siddhyy Logo" className="h-8 md:h-10 w-auto dark:block hidden object-contain" />
+                        <img src="/lightLogo.png" alt="Siddhyy Logo" className="h-8 md:h-40 w-auto dark:hidden block object-contain" />
+                        <img src="/darkLogo.png" alt="Siddhyy Logo" className="h-8 md:h-40 w-auto dark:block hidden object-contain" />
                     </NavLink>
                 </div>
 
                 {/* Mobile Menu Toggle and Profile */}
                 <div className='md:hidden flex items-center justify-between gap-2'>
-                    <ThemeChanger className="flex md:hidden"/>
+                    <ThemeChanger className="flex md:hidden" />
                     <NavLink to="/profile" className="profile">
                         <div className='px-2 py-1 border-[.01rem] border-none rounded-[3px] flex items-center justify-center'>
                             <img src={ProfileImg} alt="Profile" className='h-[4vh] w-[4vh] rounded-full object-cover object-top border-2 border-lightModeHeading dark:border-darkModeHeading' />
@@ -63,15 +63,15 @@ function Nav() {
                 <div className='hidden md:flex items-center space-x-4'>
                     {["HOME", "ABOUT", "PROJECTS", "EDUCATION", "TESTIMONIALS", "CONTACT"].map((elm, idx) => (
                         <div key={idx} className='text-[13px] flex items-center justify-center link'>
-                            <p className='text-lightModeHeading dark:text-darkModeHeading'>0{idx+1}.</p>
-                            <a className='text-lightModeText dark:text-darkModeText' href={`#${elm.toLowerCase()}`}>{elm}</a>
+                            <p className='text-lightModeHeading dark:text-darkModeHeading'>0{idx + 1}.</p>
+                            <a className='text-lightModeText  font-medium dark:text-darkModeText' href={`#${elm.toLowerCase()}`}>{elm}</a>
                         </div>
                     ))}
                 </div>
 
                 {/* Dark Mode Toggle */}
                 <div className='md:flex items-center justify-center gap-2 hidden '>
-                    <ThemeChanger className="hidden md:flex"/>
+                    <ThemeChanger className="hidden md:flex" />
                     {/* Profile Section */}
                     <NavLink to="/profile" className='hidden md:flex profile'>
                         <div className='px-2 py-1 border-[.01rem] border-lightModeHeading dark:border-darkModeHeading border-solid rounded-[3px] flex items-center justify-center'>
@@ -80,7 +80,7 @@ function Nav() {
                         </div>
                     </NavLink>
                 </div>
-                
+
             </div>
 
             {/* Mobile Menu */}
@@ -88,7 +88,7 @@ function Nav() {
                 <div className='absolute top-[10.8vh] left-0 w-full bg-lightModeBg dark:bg-darkModeBg flex flex-col items-center z-50 transition-transform duration-300'>
                     {["HOME", "ABOUT", "PROJECTS", "EDUCATION", "TESTIMONIALS", "CONTACT"].map((elm, idx) => (
                         <div key={idx} className='text-lightModeText dark:text-darkModeText text-sm flex items-center space-x-2 py-4'>
-                            <p className='text-lightModeHeading dark:text-darkModeHeading'>0{idx+1}.</p>
+                            <p className='text-lightModeHeading dark:text-darkModeHeading'>0{idx + 1}.</p>
                             <a className='text-lightModeText dark:text-darkModeText ' href={`#${elm.toLowerCase()}`}>{elm}</a>
                         </div>
                     ))}

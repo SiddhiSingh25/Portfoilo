@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import React, { useState, useEffect } from "react";
 import * as THREE from "three";
 
-function MacContainer() {
+function MacContainer({ isPlaying, setIsPlaying, videoRef }) {
     const model = useGLTF("./mac.glb");
     const [videoTexture, setVideoTexture] = useState(null);
 
@@ -18,11 +18,12 @@ function MacContainer() {
         video.onerror = () => {
             if (video.src.includes("videoSid.mp4")) {
                 video.src = "./video.mp4";
-                video.play().catch(() => {});
             }
         };
 
-        video.play().catch((err) => console.log("Autoplay video error:", err));
+        if (videoRef) {
+            videoRef.current = video;
+        }
 
         const texture = new THREE.VideoTexture(video);
         texture.colorSpace = THREE.SRGBColorSpace;
@@ -40,7 +41,17 @@ function MacContainer() {
             video.load();
             texture.dispose();
         };
-    }, []);
+    }, [videoRef]);
+
+    useEffect(() => {
+        if (videoRef?.current) {
+            if (isPlaying) {
+                videoRef.current.play().catch((err) => console.log("Video play error:", err));
+            } else {
+                videoRef.current.pause();
+            }
+        }
+    }, [isPlaying, videoRef]);
 
     const meshes = {};
 
@@ -69,7 +80,7 @@ function MacContainer() {
     });
 
     return (
-        <group position={[0, -9, 18]}>
+        <group position={[0, -9, 18]} onClick={() => setIsPlaying && setIsPlaying((prev) => !prev)}>
             <primitive object={model.scene} />
         </group>
     );

@@ -86,4 +86,7 @@ function MacContainer({ isPlaying, setIsPlaying, videoRef }) {
     );
 }
 
+useGLTF.preload("./mac.glb");
+
 export default MacContainer;
+

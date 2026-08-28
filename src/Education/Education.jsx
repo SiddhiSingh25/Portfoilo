@@ -4,7 +4,6 @@ import {
     FiBriefcase,
     FiCalendar,
     FiMapPin,
-    FiExternalLink,
     FiChevronDown,
     FiChevronUp,
     FiAward,
@@ -130,10 +129,8 @@ function Education() {
         }
     ];
 
-    const [activeTab, setActiveTab] = useState("all");
-    const [expandedRoles, setExpandedRoles] = useState({
-        "macreel-rn": true
-    });
+    // Single expanded role ID state (Accordion behavior: only one open at a time)
+    const [expandedRoleId, setExpandedRoleId] = useState("macreel-rn");
     const [visibleItems, setVisibleItems] = useState({});
 
     useEffect(() => {
@@ -155,47 +152,21 @@ function Education() {
         elements.forEach((el) => observer.observe(el));
 
         return () => observer.disconnect();
-    }, [activeTab]);
+    }, []);
 
+    // Accordion toggle: opening one collapses others
     const toggleRole = (roleId) => {
-        setExpandedRoles(prev => ({
-            ...prev,
-            [roleId]: !prev[roleId]
-        }));
+        setExpandedRoleId(prev => (prev === roleId ? null : roleId));
     };
-
-    const getLogoIcon = (type) => {
-        switch (type) {
-            case "work":
-                return <FiBriefcase className="text-xl" />;
-            case "degree":
-                return <BiSolidGraduation className="text-xl" />;
-            case "diploma":
-                return <FiAward className="text-xl" />;
-            case "school":
-                return <FiBookOpen className="text-xl" />;
-            default:
-                return <FiBriefcase className="text-xl" />;
-        }
-    };
-
-    const filteredData = educationData.filter(item => {
-        if (activeTab === "all") return true;
-        return item.category === activeTab;
-    });
-
-    const experienceCount = educationData.filter(i => i.category === "experience").length;
-    const educationCount = educationData.filter(i => i.category === "education").length;
 
     return (
         <section
-            className="min-h-screen w-full py-12 md:py-20 px-4 sm:px-8 md:px-16 flex items-center justify-center flex-col"
+            className="min-h-screen w-full py-12 md:py-20 px-4 sm:px-8 md:px-16 flex items-center justify-center flex-col overflow-hidden"
             id="education"
         >
             <div className="w-full max-w-5xl flex items-start justify-start mb-8 md:mb-10">
                 <Heading count="04." title="Experience & Education" />
             </div>
-
 
             {/* Connected Vertical Timeline (Clean Open Layout, No Cards) */}
             <div className="relative w-full max-w-5xl pl-2 sm:pl-4 md:pl-6">
@@ -203,29 +174,30 @@ function Education() {
                 <div className="absolute left-[24px] sm:left-[32px] md:left-[40px] top-5 bottom-5 w-[2px] bg-gradient-to-b from-lightModeHeading via-[#4A62B0] to-lightModeHeading dark:from-darkModeHeading dark:via-teal-400 dark:to-darkModeHeading rounded-full z-0 opacity-80" />
 
                 <div className="flex flex-col gap-10 relative z-10">
-                    {filteredData.map((item, index) => {
+                    {educationData.map((item, index) => {
                         const isVisible = visibleItems[item.id];
                         return (
                             <div
                                 key={item.id}
                                 data-id={item.id}
                                 style={{ transitionDelay: `${index * 120}ms` }}
-                                className={`timeline-item-anim flex items-start gap-4 sm:gap-6 md:gap-8 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] transform ${isVisible
+                                className={`timeline-item-anim flex items-start gap-4 sm:gap-6 md:gap-8 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] transform ${
+                                    isVisible
                                         ? "opacity-100 translate-y-0 scale-100"
                                         : "opacity-0 translate-y-12 scale-[0.97]"
-                                    }`}
+                                }`}
                             >
                                 {/* Circular Timeline Node (Year Badge) */}
-                                <div className="relative z-10 w-11 h-11 md:w-13 md:h-13 rounded-full flex items-center justify-center bg-white dark:bg-[#0A192F] text-lightModeHeading dark:text-darkModeHeading border-2 border-lightModeHeading dark:border-darkModeHeading shadow-md shadow-lightModeHeading/10 dark:shadow-darkModeHeading/10 flex-shrink-0 hover:scale-110 transition-transform duration-300">
+                                <div className="relative z-10 w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center bg-white dark:bg-[#0A192F] text-lightModeHeading dark:text-darkModeHeading border-2 border-lightModeHeading dark:border-darkModeHeading shadow-md shadow-lightModeHeading/10 dark:shadow-darkModeHeading/10 flex-shrink-0 hover:scale-110 transition-transform duration-300">
                                     <span className="text-xs sm:text-sm font-bold roboto font-mono tracking-tighter">
                                         {item.nodeYear}
                                     </span>
                                 </div>
 
-                                {/* Open Content Area */}
+                                {/* Open Content Area (No Boxed Cards) */}
                                 <div className="flex-1 pt-0.5">
                                     {item.roles.map((role) => {
-                                        const isExpanded = !!expandedRoles[role.id];
+                                        const isExpanded = expandedRoleId === role.id;
                                         const primaryTitle = role.title;
                                         const secondarySubtitle = `${item.organization} | ${role.period}`;
 
@@ -237,32 +209,34 @@ function Education() {
                                                     className="flex items-center justify-between cursor-pointer select-none group/item pb-3 border-b border-gray-200/60 dark:border-gray-800/60 transition-colors"
                                                 >
                                                     <div className="pr-4">
-                                                        <h3 className="text-base md:text-xl font-bold text-gray-900 dark:text-[#E6F1FF] roboto leading-snug group-hover/item:text-lightModeHeading dark:group-hover/item:text-darkModeHeading transition-colors duration-300">
+                                                        <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-[#E6F1FF] roboto leading-snug group-hover/item:text-lightModeHeading dark:group-hover/item:text-darkModeHeading transition-colors duration-300">
                                                             {primaryTitle}
                                                         </h3>
-                                                        <p className="text-xs md:text-sm text-gray-500 dark:text-[#8892B0] font-sans mt-0.5">
+                                                        <p className="text-xs sm:text-sm text-gray-500 dark:text-[#8892B0] font-sans mt-0.5">
                                                             {secondarySubtitle}
                                                         </p>
                                                     </div>
 
                                                     <button
                                                         type="button"
-                                                        className={`p-2 rounded-lg transition-all duration-300 flex-shrink-0 ${isExpanded
+                                                        className={`p-2 rounded-lg transition-all duration-300 flex-shrink-0 ${
+                                                            isExpanded
                                                                 ? "text-lightModeHeading dark:text-darkModeHeading bg-[#D3DEFA]/40 dark:bg-teal-950/40"
                                                                 : "text-gray-400 group-hover/item:text-gray-600 dark:group-hover/item:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800/80"
-                                                            }`}
+                                                        }`}
                                                         aria-label="Toggle details"
                                                     >
                                                         {isExpanded ? <FiChevronUp className="text-lg md:text-xl" /> : <FiChevronDown className="text-lg md:text-xl" />}
                                                     </button>
                                                 </div>
 
-                                                {/* Expanded Content Drawer with Smooth Grid Height Animation */}
+                                                {/* Expanded Content Drawer */}
                                                 <div
-                                                    className={`grid transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isExpanded
+                                                    className={`grid transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                                                        isExpanded
                                                             ? "grid-rows-[1fr] opacity-100 mt-4"
                                                             : "grid-rows-[0fr] opacity-0 mt-0"
-                                                        }`}
+                                                    }`}
                                                 >
                                                     <div className="overflow-hidden">
                                                         <div className="space-y-4 pl-1 pb-2">
@@ -318,7 +292,7 @@ function Education() {
                                                                 )}
                                                             </div>
 
-                                                            {/* Bullet details */}
+                                                            {/* Bullet Details */}
                                                             <div className="space-y-2 pt-1">
                                                                 {role.details.map((point, pIndex) => (
                                                                     <div key={pIndex} className="flex items-start gap-2.5 text-gray-600 dark:text-[#8892B0]">
@@ -359,3 +333,5 @@ function Education() {
 }
 
 export default Education;
+
+

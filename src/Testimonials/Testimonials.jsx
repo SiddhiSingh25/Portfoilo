@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Heading from '../Common/Heading';
+import testimonialIcon from '../assets/testimonial_icon.jpg';
 
 
 const testimonialsData = [
@@ -11,7 +12,7 @@ const testimonialsData = [
         clientName: 'Anjani Kumar Rai',
         schoolWebsite: 'School Website',
         liveUrl: 'https://www.aisgazipur.in/',
-        profileImg: profile1,
+        profileImg: testimonialIcon,
         highlightQuote: `"Very good work and support throughout the project."`,
         quote: `We are very happy with the website. The design is clean and professional, and all the changes we asked for were done properly. Siddhi was also very supportive whenever we had any doubt or wanted to make a change. Overall, a very good experience.`,
         author: '— Anjani Kumar Rai',
@@ -25,7 +26,7 @@ const testimonialsData = [
         clientName: 'Sunny Kumar',
         schoolWebsite: 'Dance Academy Website',
         liveUrl: 'https://dance-academy-psi.vercel.app/',
-        profileImg: profile2,
+        profileImg: testimonialIcon,
         highlightQuote: `"Really happy with the website and the overall work."`,
         quote: `Siddhi understood what we wanted for our dance academy website and made it look very nice and professional. She was always available whenever we needed any changes or had any questions. The website is easy to use and looks great on mobile also. Really satisfied with the work.`,
         author: '— Sunny Kumar',

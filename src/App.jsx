@@ -11,16 +11,16 @@ import Contact from './Contact/Contact';
 function App() {
   return (
     <>
-    <div className= 'h-[100%] w-[100%] dark:bg-darkModeBg bg-lightModeBg'>
-    <Nav/>
-    <Home/>
-    <About/>
-    <Project/>
-    <Notes/>
-    <Education/>
-    <Testimonials/>
-    <Contact/>
-    </div>
+      <div className='h-[100%] w-[100%] dark:bg-darkModeBg bg-lightModeBg'>
+        <Nav />
+        <Home />
+        <About />
+        <Project />
+        {/* <Notes/> */}
+        <Education />
+        <Testimonials />
+        <Contact />
+      </div>
     </>
   )
 }

@@ -88,7 +88,7 @@ function Contact() {
                     <img
                         src={ProfileImg}
                         alt="Siddhi Singh"
-                        className="w-6 h-6 sm:w-7 sm:h-7 rounded-full object-cover border border-gray-200 dark:border-gray-600"
+                        className="w-6 h-6 sm:w-7 sm:h-7 rounded-full object-cover object-top border border-gray-200 dark:border-gray-600"
                     />
                     <span className="font-bold text-gray-900 dark:text-white text-sm sm:text-base">
                         Book a call

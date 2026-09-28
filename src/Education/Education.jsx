@@ -20,9 +20,9 @@ function Education() {
             category: "experience",
             nodeYear: "2026",
             organization: "Macreel Infosoft Pvt. Ltd.",
-            tagline: "Mobile App & Web Development Studio",
+            tagline: "Cross Platform App & Web Development",
             location: "Sector 63, Noida, UP",
-            website: "#",
+            website: "https://macreel.co.in/",
             iconType: "work",
             roles: [
                 {
@@ -34,15 +34,60 @@ function Education() {
                     department: "Department : Information Technology (IT)",
                     mode: "Mode : On-site (6 Days/Week)",
                     roleDetails: "Role : Mobile App & Web Development",
-                    techStack: ["React Native", "React.js", "JavaScript", "REST APIs", "Mobile Dev", "Git"],
+                    techStack: [
+                        "React Native",
+                        "React.js",
+                        "JavaScript",
+                        "REST APIs",
+                        "Razorpay",
+                        "Delhivery",
+                        "Git"
+                    ],
                     details: [
-                        "Developing high-performance cross-platform mobile applications with React Native for iOS and Android.",
-                        "Building responsive, dynamic web user interfaces using React.js and modern JavaScript (ES6+).",
-                        "Integrating REST APIs, implementing state management, and optimizing UI render performance."
+                        "Built and shipped 5+ real-world projects across e-commerce, E-learning Platform and many more.",
+                        "Specialized in React Native with experience integrating complex APIs, payment gateways, and logistics systems.",
+                        "Developing cross-platform applications for both Android and iOS."
                     ]
                 }
             ]
         },
+
+        {
+            id: "techpile",
+            category: "experience",
+            nodeYear: "2025",
+            organization: "Techpile Technology Pvt. Ltd.",
+            tagline: "Full Stack Web Development",
+            location: "Lucknow, UP",
+            website: "https://www.techpile.in/",
+            iconType: "work",
+            roles: [
+                {
+                    id: "techpile-mern",
+                    title: "MERN Stack Developer",
+                    employmentType: "Internship",
+                    period: "2025",
+                    location: "Lucknow, UP",
+                    department: "Department : Web Development",
+                    mode: "Mode : Training & Development",
+                    roleDetails: "Role : Full Stack Web Development",
+                    techStack: [
+                        "React.js",
+                        "JavaScript",
+                        "Node.js",
+                        "Express.js",
+                        "MongoDB",
+                        "REST APIs",
+                        "Git"
+                    ],
+                    details: [
+                        "Built multiple full-stack web applications using the MERN stack.",
+                        "Strengthened full-stack development skills through real-world projects and hands-on training."
+                    ]
+                }
+            ]
+        },
+
         {
             id: "gcrg",
             category: "education",
@@ -50,7 +95,7 @@ function Education() {
             organization: "GCRG Lucknow",
             tagline: "Affiliated with AKTU University",
             location: "Lucknow, Uttar Pradesh",
-            website: "#",
+            website: "https://gcrg.edu.in/",
             iconType: "degree",
             roles: [
                 {
@@ -62,15 +107,21 @@ function Education() {
                     marks: "Status : 3rd Year",
                     university: "University : AKTU",
                     branch: "Branch : Computer Science (Data Science)",
-                    techStack: ["Data Science", "Python", "Data Structures", "DBMS", "Algorithms"],
+                    techStack: [
+                        "Data Science",
+                        "Python",
+                        "Data Structures",
+                        "DBMS",
+                        "Algorithms"
+                    ],
                     details: [
-                        "Currently pursuing 3rd year in Computer Science & Engineering with specialization in Data Science.",
-                        "Focusing on core CS subjects including Data Structures, Algorithms, Machine Learning fundamentals, and Database Systems.",
-                        "Actively building web and software applications alongside academic curriculum."
+                        "Currently pursuing B.Tech in Computer Science & Engineering with specialization in Data Science.",
+                        "Building practical projects alongside academics in development, automation, and data-driven technologies."
                     ]
                 }
             ]
         },
+
         {
             id: "polytechnic",
             category: "education",
@@ -87,47 +138,24 @@ function Education() {
                     employmentType: "Diploma",
                     period: "2022 - 2025",
                     location: "Ballia, UP",
-                    marks: "Aggregate : 82.6%",
+                    marks: "Aggregate : 83%",
                     board: "Board : BTEUP",
                     branch: "Branch : Information Technology",
                     medium: "Medium : English",
-                    techStack: ["Information Technology", "Web Technologies", "DBMS", "C / C++", "Networking"],
+                    techStack: [
+                        "Information Technology",
+                        "Web Technologies",
+                        "DBMS",
+                        "C / C++",
+                        "Networking"
+                    ],
                     details: [
-                        "Graduated with Distinction, securing an aggregate score of 82.6% in Information Technology.",
-                        "Acquired in-depth technical knowledge in Web Programming, Database Management, and Operating Systems.",
-                        "Successfully completed academic projects demonstrating practical coding and problem-solving skills."
+                        "Graduated with 83% and secured Branch Topper position in Information Technology.",
+                        "Built a strong foundation in programming, web development, databases, and computer networks."
                     ]
                 }
             ]
         },
-        {
-            id: "school",
-            category: "education",
-            nodeYear: "2018",
-            organization: "Shri Krishn Inter College",
-            tagline: "Uttar Pradesh Secondary Education Board",
-            location: "Ballia, UP",
-            website: "#",
-            iconType: "school",
-            roles: [
-                {
-                    id: "hs-school",
-                    title: "Senior Secondary Education & High School",
-                    employmentType: "Secondary Education",
-                    period: "2018 - 2022",
-                    location: "Ballia, UP",
-                    marks: "Percentage : 74.0%",
-                    stream: "Stream : Mathematics & Science",
-                    board: "Board : UP Board",
-                    medium: "Medium : Hindi",
-                    techStack: ["Mathematics", "Science", "Logic & Problem Solving"],
-                    details: [
-                        "Completed Senior Secondary Education & High School with 74.0% marks under UP Board.",
-                        "Focused on Mathematics, Science, and foundational computer concepts."
-                    ]
-                }
-            ]
-        }
     ];
 
     const [activeTab, setActiveTab] = useState("all");
@@ -158,10 +186,7 @@ function Education() {
     }, [activeTab]);
 
     const toggleRole = (roleId) => {
-        setExpandedRoles(prev => ({
-            ...prev,
-            [roleId]: !prev[roleId]
-        }));
+        setExpandedRoles(prev => (prev[roleId] ? {} : { [roleId]: true }));
     };
 
     const getLogoIcon = (type) => {
@@ -205,18 +230,22 @@ function Education() {
                 <div className="flex flex-col gap-10 relative z-10">
                     {filteredData.map((item, index) => {
                         const isVisible = visibleItems[item.id];
+                        const firstRoleId = item.roles?.[0]?.id;
                         return (
                             <div
                                 key={item.id}
                                 data-id={item.id}
                                 style={{ transitionDelay: `${index * 120}ms` }}
                                 className={`timeline-item-anim flex items-start gap-4 sm:gap-6 md:gap-8 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] transform ${isVisible
-                                        ? "opacity-100 translate-y-0 scale-100"
-                                        : "opacity-0 translate-y-12 scale-[0.97]"
+                                    ? "opacity-100 translate-y-0 scale-100"
+                                    : "opacity-0 translate-y-12 scale-[0.97]"
                                     }`}
                             >
                                 {/* Circular Timeline Node (Year Badge) */}
-                                <div className="relative z-10 w-11 h-11 md:w-13 md:h-13 rounded-full flex items-center justify-center bg-white dark:bg-[#0A192F] text-lightModeHeading dark:text-darkModeHeading border-2 border-lightModeHeading dark:border-darkModeHeading shadow-md shadow-lightModeHeading/10 dark:shadow-darkModeHeading/10 flex-shrink-0 hover:scale-110 transition-transform duration-300">
+                                <div
+                                    onClick={() => firstRoleId && toggleRole(firstRoleId)}
+                                    className="relative z-10 w-11 h-11 md:w-13 md:h-13 rounded-full flex items-center justify-center bg-white dark:bg-[#0A192F] text-lightModeHeading dark:text-darkModeHeading border-2 border-lightModeHeading dark:border-darkModeHeading shadow-md shadow-lightModeHeading/10 dark:shadow-darkModeHeading/10 flex-shrink-0 hover:scale-110 transition-transform duration-300 cursor-pointer"
+                                >
                                     <span className="text-xs sm:text-sm font-bold roboto font-mono tracking-tighter">
                                         {item.nodeYear}
                                     </span>
@@ -238,7 +267,7 @@ function Education() {
                                                 >
                                                     <div className="pr-4">
                                                         <h3 className="text-base md:text-xl font-bold text-gray-900 dark:text-[#E6F1FF] roboto leading-snug group-hover/item:text-lightModeHeading dark:group-hover/item:text-darkModeHeading transition-colors duration-300">
-                                                            {primaryTitle}
+                                                            {primaryTitle} <span className="text-xs sm:text-sm font-medium text-gray-500 dark:text-[#8892B0]">({role.employmentType})</span>
                                                         </h3>
                                                         <p className="text-xs md:text-sm text-gray-500 dark:text-[#8892B0] font-sans mt-0.5">
                                                             {secondarySubtitle}
@@ -248,8 +277,8 @@ function Education() {
                                                     <button
                                                         type="button"
                                                         className={`p-2 rounded-lg transition-all duration-300 flex-shrink-0 ${isExpanded
-                                                                ? "text-lightModeHeading dark:text-darkModeHeading bg-[#D3DEFA]/40 dark:bg-teal-950/40"
-                                                                : "text-gray-400 group-hover/item:text-gray-600 dark:group-hover/item:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800/80"
+                                                            ? "text-lightModeHeading dark:text-darkModeHeading bg-[#D3DEFA]/40 dark:bg-teal-950/40"
+                                                            : "text-gray-400 group-hover/item:text-gray-600 dark:group-hover/item:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800/80"
                                                             }`}
                                                         aria-label="Toggle details"
                                                     >
@@ -260,64 +289,12 @@ function Education() {
                                                 {/* Expanded Content Drawer with Smooth Grid Height Animation */}
                                                 <div
                                                     className={`grid transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isExpanded
-                                                            ? "grid-rows-[1fr] opacity-100 mt-4"
-                                                            : "grid-rows-[0fr] opacity-0 mt-0"
+                                                        ? "grid-rows-[1fr] opacity-100 mt-4"
+                                                        : "grid-rows-[0fr] opacity-0 mt-0"
                                                         }`}
                                                 >
                                                     <div className="overflow-hidden">
                                                         <div className="space-y-4 pl-1 pb-2">
-                                                            {/* Sub Badges Grid */}
-                                                            <div className="flex flex-wrap gap-2 text-xs">
-                                                                <span className="px-2.5 py-1 rounded-md bg-gray-100 dark:bg-darkModeBox/90 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700/60 font-mono">
-                                                                    {role.employmentType}
-                                                                </span>
-                                                                {role.department && (
-                                                                    <span className="px-2.5 py-1 rounded-md bg-gray-100 dark:bg-darkModeBox/90 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700/60 font-mono">
-                                                                        {role.department}
-                                                                    </span>
-                                                                )}
-                                                                {role.branch && (
-                                                                    <span className="px-2.5 py-1 rounded-md bg-gray-100 dark:bg-darkModeBox/90 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700/60 font-mono">
-                                                                        {role.branch}
-                                                                    </span>
-                                                                )}
-                                                                {role.marks && (
-                                                                    <span className="px-2.5 py-1 rounded-md bg-[#D3DEFA]/40 dark:bg-teal-950/40 text-lightModeHeading dark:text-darkModeHeading border border-[#4A62B0]/30 dark:border-teal-800/50 font-semibold font-mono">
-                                                                        {role.marks}
-                                                                    </span>
-                                                                )}
-                                                                {role.roleDetails && (
-                                                                    <span className="px-2.5 py-1 rounded-md bg-gray-100 dark:bg-darkModeBox/90 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700/60 font-mono">
-                                                                        {role.roleDetails}
-                                                                    </span>
-                                                                )}
-                                                                {role.mode && (
-                                                                    <span className="px-2.5 py-1 rounded-md bg-gray-100 dark:bg-darkModeBox/90 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700/60 font-mono">
-                                                                        {role.mode}
-                                                                    </span>
-                                                                )}
-                                                                {role.board && (
-                                                                    <span className="px-2.5 py-1 rounded-md bg-gray-100 dark:bg-darkModeBox/90 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700/60 font-mono">
-                                                                        {role.board}
-                                                                    </span>
-                                                                )}
-                                                                {role.university && (
-                                                                    <span className="px-2.5 py-1 rounded-md bg-gray-100 dark:bg-darkModeBox/90 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700/60 font-mono">
-                                                                        {role.university}
-                                                                    </span>
-                                                                )}
-                                                                {role.medium && (
-                                                                    <span className="px-2.5 py-1 rounded-md bg-gray-100 dark:bg-darkModeBox/90 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700/60 font-mono">
-                                                                        {role.medium}
-                                                                    </span>
-                                                                )}
-                                                                {role.location && (
-                                                                    <span className="px-2.5 py-1 rounded-md bg-gray-100 dark:bg-darkModeBox/90 text-gray-600 dark:text-[#8892B0] border border-gray-200 dark:border-gray-700/60 flex items-center gap-1 font-mono">
-                                                                        <FiMapPin className="text-xs" /> {role.location}
-                                                                    </span>
-                                                                )}
-                                                            </div>
-
                                                             {/* Bullet details */}
                                                             <div className="space-y-2 pt-1">
                                                                 {role.details.map((point, pIndex) => (

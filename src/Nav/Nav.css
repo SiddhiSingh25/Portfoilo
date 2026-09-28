@@ -3,6 +3,7 @@
         opacity: 0;
         transform: translateY(-8px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -13,10 +14,11 @@
     animation: fadeIn 0.25s ease-out forwards;
 }
 
-.link{
+.link {
     position: relative;
 }
-.link::after{
+
+.link::after {
     position: absolute;
     content: "";
     height: 1px;
@@ -26,12 +28,15 @@
     background-color: #4A62B0;
     transition: all ease 0.4s;
 }
-.link:hover::after{
+
+.link:hover::after {
     width: 100%;
 }
-html.dark .link::after{
+
+html.dark .link::after {
     background-color: #64FFDA;
 }
+
 .navBorder {
     border-top: none !important;
     border-left: none !important;

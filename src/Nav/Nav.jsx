@@ -24,6 +24,18 @@ function Nav() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    // Prevent body scroll when mobile menu is open
+    useEffect(() => {
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isMobileMenuOpen]);
+
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -58,7 +70,7 @@ function Nav() {
 
     return (
         <>
-            <nav className={`fixed top-0 left-0 w-full h-16 md:h-20 flex items-center justify-center bg-lightModeBg/95 dark:bg-darkModeBg/95 backdrop-blur-md z-50 transition-transform duration-300 ${isNavVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+            <nav className={`fixed top-0 left-0 w-full h-16 md:h-20 flex items-center justify-center bg-white dark:bg-darkModeBg z-[999] transition-transform duration-300 ${isNavVisible ? 'translate-y-0' : '-translate-y-full'}`}>
                 <div className='h-full navBorder w-[90%] max-w-7xl flex items-center justify-between border-b-[0.01rem] border-t-0 border-x-0 border-solid border-lightModeHeading/20 dark:border-darkModeHeading/20'>
 
                     {/* Logo */}
@@ -87,7 +99,7 @@ function Nav() {
                         </NavLink>
                     </div>
 
-                    {/* Mobile Controls (Theme, Profile, Hamburger) */}
+                    {/* Mobile Controls (Theme, Profile, Animated Hamburger) */}
                     <div className='md:hidden flex items-center justify-end gap-2 sm:gap-3 shrink-0'>
                         <ThemeChanger className="flex" />
                         <NavLink to="/profile" className="profile flex items-center justify-center">
@@ -95,37 +107,33 @@ function Nav() {
                         </NavLink>
                         <button
                             onClick={toggleMobileMenu}
-                            className='p-1.5 rounded-lg text-lightModeHeading dark:text-darkModeHeading hover:bg-lightModeHeading/10 dark:hover:bg-darkModeHeading/10 transition-colors focus:outline-none'
+                            className='p-2 rounded-lg text-lightModeHeading dark:text-darkModeHeading hover:bg-lightModeHeading/10 dark:hover:bg-darkModeHeading/10 transition-colors focus:outline-none'
                             aria-label="Toggle navigation menu"
                         >
-                            <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-                                {isMobileMenuOpen ? (
-                                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M6 18L18 6M6 6l12 12' />
-                                ) : (
-                                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M4 6h16M4 12h16M4 18h16' />
-                                )}
-                            </svg>
+                            <div className="w-6 h-6 flex flex-col justify-center items-center relative">
+                                <span className={`w-6 h-[2px] bg-current rounded-full transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'rotate-45 translate-y-[7px]' : ''}`}></span>
+                                <span className={`w-6 h-[2px] bg-current rounded-full transition-all duration-300 ease-in-out my-[5px] ${isMobileMenuOpen ? 'opacity-0 scale-x-0' : 'opacity-100 scale-x-100'}`}></span>
+                                <span className={`w-6 h-[2px] bg-current rounded-full transition-all duration-300 ease-in-out ${isMobileMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`}></span>
+                            </div>
                         </button>
                     </div>
 
                 </div>
 
-                {/* Mobile Menu Dropdown */}
-                {isMobileMenuOpen && (
-                    <div className='md:hidden absolute top-[100%] left-0 w-full bg-lightModeBg/98 dark:bg-darkModeBg/98 backdrop-blur-lg flex flex-col items-center py-4 shadow-xl border-b border-t-0 border-x-0 border-lightModeHeading/10 dark:border-darkModeHeading/10 z-50 transition-all duration-300 animate-fadeIn'>
-                        {navLinks.map((elm, idx) => (
-                            <a
-                                key={idx}
-                                href={elm.href}
-                                onClick={() => setMobileMenuOpen(false)}
-                                className='w-full text-center text-lightModeText dark:text-darkModeText text-sm font-medium flex items-center justify-center space-x-2 py-3 hover:bg-lightModeHeading/10 dark:hover:bg-darkModeHeading/10 transition-colors'
-                            >
-                                <span className='text-lightModeHeading dark:text-darkModeHeading text-xs font-semibold'>0{idx + 1}.</span>
-                                <span>{elm.name}</span>
-                            </a>
-                        ))}
-                    </div>
-                )}
+                {/* Mobile Menu Dropdown with 100% screen height, white bg, and high z-index */}
+                <div className={`md:hidden fixed top-16 left-0 w-full h-[calc(100vh-4rem)] bg-white dark:bg-darkModeBg flex flex-col items-center justify-center space-y-4 py-8 shadow-2xl z-[998] transition-all duration-300 ease-in-out origin-top ${isMobileMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+                    {navLinks.map((elm, idx) => (
+                        <a
+                            key={idx}
+                            href={elm.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className='w-full text-center text-lightModeText dark:text-darkModeText text-base font-semibold flex items-center justify-center space-x-2 py-3 hover:bg-lightModeHeading/10 dark:hover:bg-darkModeHeading/10 transition-colors'
+                        >
+                            <span className='text-lightModeHeading dark:text-darkModeHeading text-sm font-semibold'>0{idx + 1}.</span>
+                            <span>{elm.name}</span>
+                        </a>
+                    ))}
+                </div>
             </nav>
             {/* Layout spacer so page content is not overlapped when fixed at top */}
             <div className="h-16 md:h-20 w-full pointer-events-none"></div>

@@ -9,6 +9,9 @@ export default {
 
   theme: {
     extend: {
+      screens: {
+        'xs': '480px',
+      },
       colors: {
         darkModeBg: '#0A192F', 
         darkModeHeading: '#64FFDA', 
